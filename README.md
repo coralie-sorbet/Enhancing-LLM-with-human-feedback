@@ -55,7 +55,7 @@ While full-scale training with RLHF is computationally expensive, the aim of thi
 ```
 project/
 ├── Model_training.ipynb              # Notebook with the training of the models
-├── Model_testing.ipynb               # otebook with the testing on unseen text of the models
+├── Model_testing.ipynb               # Notebook with the testing on unseen texts of the models
 ├── README.md                         # Overview of the project
 └── REPORT.md                         # Detailed explanation
 ```
