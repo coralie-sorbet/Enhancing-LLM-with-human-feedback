@@ -54,7 +54,7 @@ While full-scale training with RLHF is computationally expensive, the aim of thi
 
 ```
 project/
-├── src/               # Code
+├── src/               # Code for training
 ├── tests/             # Unit tests
 ├── results/           # Models 
 ├── README.md          # Overview of the project
