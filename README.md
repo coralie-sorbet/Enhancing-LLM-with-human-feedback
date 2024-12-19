@@ -92,6 +92,18 @@ This is a basic example of how to use the `PPOTrainer` from the `trl` library fo
 
 ```python
 from trl import PPOConfig, PPOTrainer
+from datasets import load_dataset
+from transformers import AutoModelForSequenceClassification, AutoTokenizer
+
+# Load pre-trained model and tokenizer
+tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen2.5-0.5B-Instruct")
+model = AutoModelForSequenceClassification.from_pretrained(
+    "Qwen/Qwen2.5-0.5B-Instruct", num_labels=1
+)
+model.config.pad_token_id = tokenizer.pad_token_id
+
+# Load dataset
+dataset = load_dataset("trl-lib/ultrafeedback_binarized", split="train")
 
 # Configure PPO training parameters
 ppo_config = PPOConfig(
@@ -103,9 +115,9 @@ ppo_config = PPOConfig(
 # Initialize PPOTrainer
 trainer = PPOTrainer(
     config=ppo_config,
-    policy=policy_model,  # Policy model to optimize
-    tokenizer=tokenizer,  # Tokenizer for text processing
-    train_dataset=train_dataset,  # Training dataset
+    policy=policy_model,    # Policy model to optimize
+    tokenizer=tokenizer,    # Tokenizer for text processing
+    train_dataset=dataset,  # Training dataset
 )
 
 # Start training
