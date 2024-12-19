@@ -124,6 +124,7 @@ trainer = PPOTrainer(
 trainer.train()
 
 ```
+
 ## Project Structure
 
 ```
