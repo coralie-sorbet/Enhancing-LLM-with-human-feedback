@@ -8,13 +8,17 @@ Transformers, introduced in the seminal paper "Attention is All You Need" by Vas
 #### Key Components
 1. **Multi-Head Self-Attention**:
    - The self-attention mechanism computes a weighted sum of input tokens, where the weights (attention scores) are learned during training.
-   - Multi-head attention extends this idea by allowing the model to focus on different parts of the input simultaneously, improving its ability to capture nuanced relationships.
+   - **Multi-head attention** extends this idea by allowing the model to focus on different parts of the input simultaneously, improving its ability to capture nuanced relationships.
 
-   Mathematical representation:
-   $$
-   \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
-   $$
-   where \(Q\), \(K\), and \(V\) are the query, key, and value matrices, and \(d_k\) is the dimensionality of the keys.
+**Mathematical representation**:
+
+$$
+\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
+$$
+
+Where \(Q\), \(K\), and \(V\) are the query, key, and value matrices, and \(d_k\) is the dimensionality of the keys.
+
+**Feedforward Layers:**
 
 2. **Feedforward Layers**:
    - Position-wise fully connected layers that apply non-linear transformations to each token's representation independently.
