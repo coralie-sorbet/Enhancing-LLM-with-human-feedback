@@ -83,6 +83,33 @@ trainer = RewardTrainer(
     train_dataset=dataset,
 )
 trainer.train()
+```
+## PPOTrainer Example
+
+This is a basic example of how to use the `PPOTrainer` from the `trl` library for Proximal Policy Optimization (PPO).
+
+### Code Example
+
+```python
+from trl import PPOConfig, PPOTrainer
+
+# Configure PPO training parameters
+ppo_config = PPOConfig(
+    num_train_epochs=1,  # Number of training epochs
+    batch_size=1,  # Batch size for training
+    output_dir="PPO_results"  # Directory to save results
+)
+
+# Initialize PPOTrainer
+trainer = PPOTrainer(
+    config=ppo_config,
+    policy=policy_model,  # Policy model to optimize
+    tokenizer=tokenizer,  # Tokenizer for text processing
+    train_dataset=train_dataset,  # Training dataset
+)
+
+# Start training
+trainer.train()
 
 ```
 ## Project Structure
