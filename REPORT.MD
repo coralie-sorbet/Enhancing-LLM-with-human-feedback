@@ -43,7 +43,7 @@ $\mathcal{L} = -\sum_{t=1}^{T} \log P(x_t \mid x_{<t})$
 ## Reinforcement Learning with Human Feedback (RLHF)
 
 ### Conceptual Framework
-RLHF bridges the gap between machine-generated outputs and human expectations. It introduces a feedback loop where human preferences guide the model’s behavior, making it more aligned with desired outcomes.
+RLHF bridges the gap between machine-generated outputs and human expectations. It introduces a feedback loop where human preferences guide the model’s behaviour, making it more aligned with desired outcomes.
 
 #### Steps in RLHF:
 1. **Training a Reward Model (RM):**
@@ -52,12 +52,7 @@ RLHF bridges the gap between machine-generated outputs and human expectations. I
 
 2. **Optimizing the Language Model with Reinforcement Learning:**
    - Using the RM as a reward function, the base LLM is fine-tuned with Proximal Policy Optimization (PPO), a policy-gradient RL algorithm.
-   - The objective is to maximize the expected reward:
-
-$$
-\max_\theta \mathbb{E}_{x \sim \pi_\theta}[R(x)]
-$$
-
+   - The objective is to maximize the expected reward: $\max_\theta \mathbb{E}_{x \sim \pi_\theta}[R(x)]$
 
 #### Challenges
 - High computational cost of fine-tuning.
