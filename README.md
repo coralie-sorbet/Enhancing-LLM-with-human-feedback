@@ -93,10 +93,4 @@ project/
 - [RLHF Blog Post](https://huggingface.co/blog/rlhf)
 - [Hugging Face RLHF Course](https://www.youtube.com/watch?v=2MBJOuVq380)
 
----
-
-## Next Steps
-1. Complete training of the reward model and validate its performance.
-2. Implement PPO-based optimization and generate sample outputs.
-3. Finalize documentation with results and insights from the project.
 
