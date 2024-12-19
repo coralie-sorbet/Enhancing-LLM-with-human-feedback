@@ -52,9 +52,7 @@ RLHF bridges the gap between machine-generated outputs and human expectations. I
 
 2. **Optimizing the Language Model with Reinforcement Learning:**
    - Using the RM as a reward function, the base LLM is fine-tuned with Proximal Policy Optimization (PPO), a policy-gradient RL algorithm.
-   - The objective is to maximize the expected reward: 
-
-$\max_\theta \mathbb{E}_{x \sim \pi_\theta}[R(x)]$
+   - The objective is to maximize the expected reward: $\max_\theta \mathbb{E}_{x \sim \pi_\theta}[R(x)]$
 
 
 #### Challenges
