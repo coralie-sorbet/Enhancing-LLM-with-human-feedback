@@ -94,22 +94,6 @@ project/
 ├── README.md                         # Overview of the project
 └── REPORT.md                         # Detailed explanation
 ```
----
-
-## Deliverables
-
-1. **Codebase**:
-   - Documented Python scripts for training the reward model and implementing PPO.
-   - Integration with Hugging Face’s TRL for efficient workflows.
-
-2. **Sample Outputs**:
-   - Generated outputs from the optimized LLM demonstrating its improved performance.
-
-3. **Documentation**:
-   - **README.md**: Overview of project objectives, methodology, and results.
-   - **REPORT.MD**: Comprehensive explanation of Transformer architectures, RLHF, and implementation details.
-
----
 
 ## Resources and References
 
