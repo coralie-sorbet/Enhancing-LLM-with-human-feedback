@@ -32,9 +32,11 @@ Causal Transformers, like GPT and LLAMA, are specialized for autoregressive task
 
 Key characteristics:
 - **Training Objective**: Minimize the negative log-likelihood of the next token:
-  $$
-   \mathcal{L} = -\sum_{t=1}^{T} \log P(x_t | x_{<t})
-   $$
+
+$$
+\mathcal{L} = -\sum_{t=1}^{T} \log P(x_t | x_{<t})
+$$
+
 - **Applications**: Text generation, code completion, and dialogue systems.
 
 ---
@@ -52,9 +54,10 @@ RLHF bridges the gap between machine-generated outputs and human expectations. I
 2. **Optimizing the Language Model with Reinforcement Learning:**
    - Using the RM as a reward function, the base LLM is fine-tuned with Proximal Policy Optimization (PPO), a policy-gradient RL algorithm.
    - The objective is to maximize the expected reward:
-    $$
-   \max_\theta \mathbb{E}_{x \sim \pi_\theta}[R(x)]
-   $$
+    
+$$
+\max_\theta \mathbb{E}_{x \sim \pi_\theta}[R(x)]
+$$
 
 
 #### Challenges
@@ -114,4 +117,3 @@ In this project, RLHF is applied to fine-tune a GPT-2 model. The fine-tuned mode
 4. Schulman, J., et al. (2017). Proximal Policy Optimization Algorithms. [arXiv:1707.06347](https://arxiv.org/abs/1707.06347)
 5. Anthropic. (2022). Constitutional AI: Harmlessness from AI Feedback. [arXiv:2204.05862](https://arxiv.org/abs/2204.05862)
 
----
