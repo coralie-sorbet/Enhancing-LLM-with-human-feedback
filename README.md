@@ -1,59 +1,40 @@
 # Enhancing Large Language Models with Human Feedback via Reinforcement Learning
 
 ## Overview
-This project investigates the integration of human feedback into training Large Language Models (LLMs) using Reinforcement Learning (RL). The objective is to enhance the performance and contextual relevance of Transformer-based models, such as GPT, through Reinforcement Learning with Human Feedback (RLHF).
+This project explores the integration of human feedback to enhance the training of Large Language Models (LLMs) using Reinforcement Learning (RL). The goal is to improve the contextual relevance and performance of Transformer-based models, such as GPT, via Reinforcement Learning with Human Feedback (RLHF).
 
-While full-scale training with RLHF is computationally expensive, the aim of this project is to design a training pipeline that effectively demonstrates the core concepts without requiring excessive resources.
+While full-scale RLHF training can be resource-intensive, this project demonstrates core concepts with a more resource-efficient approach.
 
 ---
 
 ## Objectives
 
 ### 1. Understanding and Utilizing Transformers
-- **Transformer Architecture**:
-  - Transformers, introduced in [Vaswani et al., 2017](https://arxiv.org/abs/1706.03762), rely on the self-attention mechanism to capture dependencies in sequential data. Unlike RNNs or LSTMs, they enable parallelization for efficient training.
+- **Transformers**:
+  - Introduced in [Vaswani et al., 2017](https://arxiv.org/abs/1706.03762), Transformers leverage self-attention mechanisms to process sequential data efficiently.
   - Key components:
-    - **Multi-Head Attention**: Captures relationships between tokens in input sequences.
-    - **Feedforward Layers**: Process representations outputted by the attention mechanism.
-    - **Positional Encoding**: Adds sequence information since Transformers process input as a whole.
+    - **Multi-Head Attention**: Captures token relationships in input sequences.
+    - **Feedforward Layers**: Further processes representations from attention layers.
+    - **Positional Encoding**: Encodes sequence order for better context understanding.
 
 - **Causal Transformers**:
-  - Causal Transformers, like GPT and LLAMA, are autoregressive models trained with a left-to-right context. They predict the next token in a sequence using only prior context, making them ideal for language generation tasks.
+  - Models like GPT and LLAMA predict the next token based on prior context, making them ideal for language generation tasks.
 
-### 2. Reinforcement Learning with Human Feedback
-- **RLHF**: A framework to fine-tune LLMs by incorporating human preferences. The process involves:
-  1. Training a reward model (RM) to quantify the quality of model outputs based on human feedback.
-  2. Using RL (e.g., PPO) to optimize the LLM's outputs for higher rewards from the RM.
+### 2. Reinforcement Learning with Human Feedback (RLHF)
+- **Overview**:
+  RLHF combines reinforcement learning and human preferences to fine-tune LLMs. It involves:
+  1. Training a reward model (RM) using human-labeled data.
+  2. Optimizing the LLM with RL (e.g., PPO) based on rewards provided by the RM.
   3. Fine-tuning the LLM to align its responses with human expectations.
 
-- **Challenges and Libraries**:
-  - Implementing RLHF is resource-intensive but can be simplified using libraries like [Hugging Face's TRL](https://github.com/huggingface/trl).
-
-### 3. Training a Reward Model
-- Utilize GPT-2 or similar to train a reward model that scores model outputs.
-- Example script: [Reward Modeling Example](https://github.com/huggingface/trl/blob/main/examples/scripts/reward_modeling.py).
-- **Steps**:
-  - Prepare a dataset of prompt-response pairs with associated scores.
-  - Fine-tune GPT-2 to predict these scores.
-  - Evaluate performance using metrics like correlation with human-labeled scores.
-
-### 4. Optimization with Proximal Policy Optimization (PPO)
-- PPO is a policy-gradient RL algorithm effective for optimizing LLMs with RLHF.
-- Resources:
-  - Hugging Face’s [TRL Quickstart](https://huggingface.co/blog/rlhf).
-  - CleanRL’s [PPO Implementation](https://github.com/vwxyzjn/cleanrl/tree/master).
-
-- **Workflow**:
-  1. Define a reward function using the trained RM.
-  2. Fine-tune the LLM using PPO to maximize rewards.
-  3. Evaluate outputs for fluency, relevance, and alignment with human preferences.
+- **Challenges**:
+  - RLHF can be computationally expensive but is simplified with libraries like [Hugging Face’s TRL](https://github.com/huggingface/trl).
 
 ---
+
 ## Installation
 
-### Python Package
-
-Install the library using `pip`:
+Install the `trl` library using `pip`:
 
 ```bash
 pip install trl
@@ -95,7 +76,8 @@ trainer.train()
 ```
 ## PPOTrainer Example
 
-This is a basic example of how to use the `PPOTrainer` from the `trl` library for Proximal Policy Optimization (PPO).
+Here’s a minimal example of using `PPOTrainer` from Hugging Face’s `trl` library to fine-tune an LLM using Proximal Policy Optimization (PPO).  
+This example assumes you have a dataset and models ready.
 
 ### Code Example
 
