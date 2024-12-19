@@ -57,9 +57,9 @@ Reinforcement Learning with Human Feedback (RLHF) helps bridge the gap between m
 </p>
 
 Where:
-- \( \pi_\theta \) is the **policy** (the model),
-- \( R(x) \) is the **reward** for a given output \( x \),
-- \( \theta \) is the set of model parameters.
+- $\pi_\theta$ is the **policy** (the model),
+- $R(x)$is the **reward** for a given output \( x \),
+- $\theta$ is the set of model parameters.
 
 #### Challenges
 - Computational Cost: Fine-tuning models with human feedback can be computationally expensive, requiring significant resources and time to train.
