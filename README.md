@@ -49,8 +49,17 @@ While full-scale training with RLHF is computationally expensive, the aim of thi
   3. Evaluate outputs for fluency, relevance, and alignment with human preferences.
 
 ---
+## Installation
+
+### Python Package
+
+Install the library using `pip`:
+
+```bash
+pip install trl
 
 
+---
 ## RewardTrainer Example
 
 This is a basic example of how to use the `RewardTrainer` from the `trl` library to train a model.
