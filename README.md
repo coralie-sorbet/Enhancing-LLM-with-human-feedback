@@ -50,6 +50,41 @@ While full-scale training with RLHF is computationally expensive, the aim of thi
 
 ---
 
+
+## RewardTrainer Example
+
+This is a basic example of how to use the `RewardTrainer` from the `trl` library to train a model.
+
+### Code Example
+
+```python
+from trl import RewardConfig, RewardTrainer
+from datasets import load_dataset
+from transformers import AutoModelForSequenceClassification, AutoTokenizer
+
+# Load pre-trained model and tokenizer
+tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen2.5-0.5B-Instruct")
+model = AutoModelForSequenceClassification.from_pretrained(
+    "Qwen/Qwen2.5-0.5B-Instruct", num_labels=1
+)
+model.config.pad_token_id = tokenizer.pad_token_id
+
+# Load dataset
+dataset = load_dataset("trl-lib/ultrafeedback_binarized", split="train")
+
+# Set up training arguments
+training_args = RewardConfig(output_dir="Qwen2.5-0.5B-Reward", per_device_train_batch_size=2)
+
+# Initialize and train the RewardTrainer
+trainer = RewardTrainer(
+    args=training_args,
+    model=model,
+    processing_class=tokenizer,
+    train_dataset=dataset,
+)
+trainer.train()
+
+```
 ## Project Structure
 
 ```
@@ -59,7 +94,6 @@ project/
 ├── README.md                         # Overview of the project
 └── REPORT.md                         # Detailed explanation
 ```
-
 ---
 
 ## Deliverables
