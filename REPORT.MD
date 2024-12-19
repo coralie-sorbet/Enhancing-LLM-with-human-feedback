@@ -11,9 +11,9 @@ Transformers, introduced in the seminal paper "Attention is All You Need" by Vas
    - Multi-head attention extends this idea by allowing the model to focus on different parts of the input simultaneously, improving its ability to capture nuanced relationships.
 
    Mathematical representation:
-   \[
+   $$
    \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
-   \]
+   $$
    where \(Q\), \(K\), and \(V\) are the query, key, and value matrices, and \(d_k\) is the dimensionality of the keys.
 
 2. **Feedforward Layers**:
@@ -24,13 +24,13 @@ Transformers, introduced in the seminal paper "Attention is All You Need" by Vas
    - These encodings are often sinusoidal functions of the token position.
 
 ### Causal Transformers
-Causal Transformers, like GPT and LLAMA, are specialized for autoregressive tasks, where the model predicts the next token in a sequence based on prior tokens. They are trained using a left-to-right masking mechanism to ensure that each token only attends to its predecessors.
+Causal Transformers, like GPT and LLAMA, are specialized for autoregressive tasks, where the model predicts the next token in a sequence based on prior tokens. They are trained using a left-to-right masking mechanism to ensure each token only attends to its predecessors.
 
 Key characteristics:
 - **Training Objective**: Minimize the negative log-likelihood of the next token:
-  \[
-  \mathcal{L} = -\sum_{t=1}^{T} \log P(x_t | x_{<t})
-  \]
+  $$
+   \mathcal{L} = -\sum_{t=1}^{T} \log P(x_t | x_{<t})
+   $$
 - **Applications**: Text generation, code completion, and dialogue systems.
 
 ---
@@ -48,9 +48,10 @@ RLHF bridges the gap between machine-generated outputs and human expectations. I
 2. **Optimizing the Language Model with Reinforcement Learning:**
    - Using the RM as a reward function, the base LLM is fine-tuned with Proximal Policy Optimization (PPO), a policy-gradient RL algorithm.
    - The objective is to maximize the expected reward:
-     \[
-     \max_\theta \mathbb{E}_{x \sim \pi_\theta}[R(x)]
-     \]
+    $$
+   \max_\theta \mathbb{E}_{x \sim \pi_\theta}[R(x)]
+   $$
+
 
 #### Challenges
 - High computational cost of fine-tuning.
@@ -69,11 +70,13 @@ PPO is a robust RL algorithm designed to improve training stability and sample e
 
 ### Key Features
 1. **Clipped Objective Function:**
-   - Limits the change in the probability ratio between the new and old policies:
-     \[
-     \mathcal{L}^{\text{CLIP}}(\theta) = \mathbb{E}\left[\min\left(r_t(\theta) A_t, \text{clip}(r_t(\theta), 1 - \epsilon, 1 + \epsilon) A_t\right)\right]
-     \]
-     where \(r_t(\theta)\) is the probability ratio and \(A_t\) is the advantage function.
+- Limits the change in the probability ratio between the new and old policies:
+
+$$
+\mathcal{L}^{\text{CLIP}}(\theta) = \mathbb{E}\left[\min\left(r_t(\theta) A_t, \text{clip}(r_t(\theta), 1 - \epsilon, 1 + \epsilon) A_t\right)\right]
+$$
+
+where \(r_t(\theta)\) is the probability ratio and \(A_t\) is the advantage function.
 
 2. **Entropy Regularization:**
    - Encourages policy diversity by penalizing overly deterministic actions.
@@ -87,7 +90,7 @@ PPO is a robust RL algorithm designed to improve training stability and sample e
 ## Applications and Future Directions
 
 ### Demonstrated Use Case
-In this project, RLHF is applied to fine-tune a GPT-2 model. By training a reward model and optimizing with PPO, the fine-tuned model generates text that aligns more closely with human preferences.
+In this project, RLHF is applied to fine-tune a GPT-2 model. The fine-tuned model generates text that aligns more closely with human preferences by training a reward model and optimising with PPO.
 
 ### Broader Applications
 - **Content Moderation:** Aligning models with ethical guidelines.
