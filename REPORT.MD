@@ -58,7 +58,7 @@ Reinforcement Learning with Human Feedback (RLHF) helps bridge the gap between m
 
 Where:
 - $\pi_\theta$ is the **policy** (the model),
-- $R(x)$ is the **reward** for a given output \( x \),
+- $R(x)$ is the **reward** for a given output $x$,
 - $\theta$ is the set of model parameters.
 
 #### Challenges
