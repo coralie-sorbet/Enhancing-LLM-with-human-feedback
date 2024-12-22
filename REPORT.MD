@@ -50,7 +50,7 @@ Reinforcement Learning with Human Feedback (RLHF) helps bridge the gap between m
 
 2. **Optimizing the Language Model with Reinforcement Learning:**
 - The base Large Language Model (LLM) is fine-tuned using Reinforcement Learning (RL), specifically with Proximal Policy Optimization (PPO). In this process, the RM is used as a reward function, guiding the LLM to maximize the expected reward. The goal is to align the model's responses more closely with human preferences.
--The objective function for RLHF is:
+- The objective function for RLHF is:
 
 <p align="center">
   <b>max</b><sub>&#x3B8;</sub> <i>E</i><sub>x &#8764; &#x3C0;<sub>&#x3B8;</sub></sub>[R(x)]
