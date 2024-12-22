@@ -46,11 +46,11 @@ Reinforcement Learning with Human Feedback (RLHF) helps bridge the gap between m
 
 #### Steps in RLHF:
 1. **Training a Reward Model (RM):**
-- Human evaluators rank the model's outputs based on criteria such as relevance, coherence, and alignment with human expectations. These rankings are then used to train a Reward Model (RM), which predicts a scalar reward score for each output.
+   - Human evaluators rank the model's outputs based on criteria such as relevance, coherence, and alignment with human expectations. These rankings are then used to train a Reward Model (RM), which predicts a scalar reward score for each output.
 
 2. **Optimizing the Language Model with Reinforcement Learning:**
-- The base Large Language Model (LLM) is fine-tuned using Reinforcement Learning (RL), specifically with Proximal Policy Optimization (PPO). In this process, the RM is used as a reward function, guiding the LLM to maximize the expected reward. The goal is to align the model's responses more closely with human preferences.
-- The objective function for RLHF is:
+   - The base Large Language Model (LLM) is fine-tuned using Reinforcement Learning (RL), specifically with Proximal Policy Optimization (PPO). In this process, the RM is used as a reward function, guiding the LLM to maximize the expected reward. The goal is to align the model's responses more closely with human preferences.
+   - The objective function for RLHF is:
 
 <p align="center">
   <b>max</b><sub>&#x3B8;</sub> <i>E</i><sub>x &#8764; &#x3C0;<sub>&#x3B8;</sub></sub>[R(x)]
