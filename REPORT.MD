@@ -32,8 +32,9 @@ Causal Transformers, like GPT and LLAMA, are specialized for autoregressive task
 Key characteristics:
 - **Training Objective**: Minimize the negative log-likelihood of the next token:
 
-$\mathcal{L} = -\sum_{t=1}^{T} \log P(x_t \mid x_{t})$
+$\mathcal{L} = -\sum_{t=1}^{T} \log P(x_t \mid x_{<t})$
 
+Where $x_t$ represents the token at position $t$ and $x_{<t})$ denotes all prior tokens in the sequence.
 
 - **Applications**: Causal Transformers are widely used in text generation, code completion, dialogue systems, and any scenario where predicting sequential data is required. For instance, GPT models are frequently used in chatbots and automated content creation.
 
