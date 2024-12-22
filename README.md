@@ -88,9 +88,9 @@ from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
 # Configure PPO training parameters
 ppo_config = PPOConfig(
-    num_train_epochs=1,  # Number of training epochs
-    batch_size=1,  # Batch size for training
-    output_dir="PPO_results"  # Directory to save results
+    num_train_epochs=1,         # Number of training epochs
+    batch_size=1,               # Batch size for training
+    output_dir="PPO_results"    # Directory to save results
 )
 
 # Initialize PPOTrainer
@@ -110,10 +110,10 @@ trainer.train()
 
 ```
 project/
-├── Model_training.ipynb              # Notebook with the training of the models
-├── Model_testing.ipynb               # Notebook with the testing on unseen texts of the models
-├── README.md                         # Overview of the project
-└── REPORT.md                         # Detailed explanation
+├── src/                     # Folder containing the notebook with the training of the models
+├── test/                    # Folder containing the notebook with the testing on unseen texts of the models
+├── README.md                # Overview of the project
+└── REPORT.md                # Detailed explanation
 ```
 
 ## Resources and References
