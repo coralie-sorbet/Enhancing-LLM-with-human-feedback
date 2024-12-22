@@ -16,7 +16,7 @@ $$
 \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
 $$
 
-Where \(Q\), \(K\), and \(V\) are the query, key, and value matrices, and ${d_k}$ is the dimensionality of the keys.
+Where $Q$, $K$, and $V$ are the query, key, and value matrices, and ${d_k}$ is the dimensionality of the keys.
 
 **Feedforward Layers:**
 
