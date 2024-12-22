@@ -82,7 +82,7 @@ Proximal Policy Optimization (PPO) is one of the most widely used reinforcement 
 
 ### Key Features
 1. **Clipped Objective Function:**
-- PPO’s objective function is designed to limit the change in the probability ratio between the new and old policies, ensuring stable updates:
+   - PPO’s objective function is designed to limit the change in the probability ratio between the new and old policies, ensuring stable updates:
 
 $$
 \mathcal{L}^{\text{CLIP}}(\theta) = \mathbb{E}\left[\min\left(r_t(\theta) A_t, \text{clip}(r_t(\theta), 1 - \epsilon, 1 + \epsilon) A_t\right)\right]
@@ -91,7 +91,7 @@ $$
 where $r_t(\theta)$ is the probability ratio and $A_t$ is the advantage function.
 
 2. **Entropy Regularization:**
-- To encourage the policy to explore diverse actions, PPO includes entropy regularization. This discourages overly deterministic policies, promoting a more diverse set of responses from the model.
+   - To encourage the policy to explore diverse actions, PPO includes entropy regularization. This discourages overly deterministic policies, promoting a more diverse set of responses from the model.
 
 ### Resources
 - [CleanRL's PPO Implementation](https://github.com/vwxyzjn/cleanrl/tree/master) provides a minimalistic yet powerful implementation.
