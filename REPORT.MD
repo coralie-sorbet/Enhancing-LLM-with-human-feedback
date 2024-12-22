@@ -16,7 +16,7 @@ $$
 \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
 $$
 
-Where \(Q\), \(K\), and \(V\) are the query, key, and value matrices, and \(d_k\) is the dimensionality of the keys.
+Where \(Q\), \(K\), and \(V\) are the query, key, and value matrices, and \({d_k}\) is the dimensionality of the keys.
 
 **Feedforward Layers:**
 
@@ -32,7 +32,7 @@ Causal Transformers, like GPT and LLAMA, are specialized for autoregressive task
 Key characteristics:
 - **Training Objective**: Minimize the negative log-likelihood of the next token:
 
-$\mathcal{L} = -\sum_{t=1}^{T} \log P(x_t \mid x_{<t})$
+$\mathcal{L} = -\sum_{t=1}^{T} \log P(x_t \mid x_{t})$
 
 
 - **Applications**: Causal Transformers are widely used in text generation, code completion, dialogue systems, and any scenario where predicting sequential data is required. For instance, GPT models are frequently used in chatbots and automated content creation.
