@@ -91,7 +91,7 @@ $$
 where $r_t(\theta)$ is the probability ratio and $A_t$ is the advantage function.
 
 2. **Entropy Regularization:**
-   - To encourage the policy to explore diverse actions, PPO includes entropy regularization. This discourages overly deterministic policies, promoting a more diverse set of responses from the model.
+- To encourage the policy to explore diverse actions, PPO includes entropy regularization. This discourages overly deterministic policies, promoting a more diverse set of responses from the model.
 
 ### Resources
 - [CleanRL's PPO Implementation](https://github.com/vwxyzjn/cleanrl/tree/master) provides a minimalistic yet powerful implementation.
