@@ -88,7 +88,7 @@ $$
 \mathcal{L}^{\text{CLIP}}(\theta) = \mathbb{E}\left[\min\left(r_t(\theta) A_t, \text{clip}(r_t(\theta), 1 - \epsilon, 1 + \epsilon) A_t\right)\right]
 $$
 
-where \(r_t(\theta)\) is the probability ratio and \(A_t\) is the advantage function.
+where $r_t(\theta)$ is the probability ratio and $A_t$ is the advantage function.
 
 2. **Entropy Regularization:**
    - To encourage the policy to explore diverse actions, PPO includes entropy regularization. This discourages overly deterministic policies, promoting a more diverse set of responses from the model.
