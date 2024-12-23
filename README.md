@@ -39,6 +39,19 @@ For more details, see [REPORT.MD](./REPORT.MD)
 - **Improved Alignment**: RLHF enables LLMs to produce responses better aligned with human preferences.
 - **Trade-offs**: Computational cost remains a significant barrier for large-scale implementations.
 - **Simplified Tools**: Libraries like TRL streamline RLHF processes for smaller-scale experimentation.
+- 
+**Reward Model Performance**
+
+The reward model achieved the following evaluation results:
+
+- **`eval_loss`**: **0.6931**  
+  This represents the cross-entropy loss during evaluation. A lower loss indicates better performance, but the ideal value depends on the specific task and dataset.
+
+- **`eval_accuracy`**: **0.7473**  
+  The model correctly classified **74.73%** of the evaluation samples. While this is a good starting point, there's still room for improvement.
+
+- **`eval_runtime`**, **`eval_samples_per_second`**, **`eval_steps_per_second`**  
+  These metrics relate to the **efficiency** of the evaluation process and are not directly tied to the model's performance.
 
 ---
 
