@@ -7,6 +7,7 @@ Transformers, introduced in the seminal paper "Attention is All You Need" by [Va
 #### Key Components
 1. **Multi-Head Self-Attention**:
 The self-attention mechanism computes a weighted sum of input tokens, where the attention scores are learned during training. Multi-head attention allows the model to attend to different parts of the input simultaneously, enhancing its ability to capture nuanced relationships across different token dependencies.
+
 **Mathematical representation**:
 
 $$
