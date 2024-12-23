@@ -1,13 +1,27 @@
 # Enhancing Large Language Models with Human Feedback via Reinforcement Learning
 
 ## Overview
-This project explores the integration of human feedback to enhance the training of Large Language Models (LLMs) using Reinforcement Learning (RL). The goal is to improve the contextual relevance and performance of Transformer-based models, such as GPT, via Reinforcement Learning with Human Feedback (RLHF).
-The diagram below provides a high-level overview of the RLHF process, showing how the initial model is tuned using a reward model and reinforcement learning with techniques like PPO.
+This project demonstrates how human feedback can be integrated to enhance the training of large language models (LLMs) using Reinforcement Learning (RL). The primary goal is to improve the contextual relevance and performance of Transformer-based models, such as GPT, through Reinforcement Learning with Human Feedback (RLHF).
 
-<img width="475" alt="image" src="https://github.com/user-attachments/assets/02219518-24c9-4246-859d-9b85404da0f7" />
+### Key Highlights:
+- **Initial Model**: A pre-trained language model is the starting point.
+- **Reward Model**: Built to evaluate outputs based on human preferences.
+- **Reinforcement Learning**: Fine-tunes the model using techniques like **Proximal Policy Optimization (PPO)**.
 
 
-While full-scale RLHF training can be resource-intensive, this project demonstrates core concepts with a more resource-efficient approach.
+The diagram below illustrates the high-level workflow of RLHF. It highlights how the initial language model is tuned iteratively using a reward model and RL techniques to align outputs with human preferences:
+
+![RLHF Workflow](https://github.com/user-attachments/assets/02219518-24c9-4246-859d-9b85404da0f7)
+
+
+While full-scale RLHF training can be resource-intensive, this project simplifies the process to demonstrate **core concepts** in a more **resource-efficient manner**, making it accessible for experimentation and learning.
+
+---
+
+### Improvements in this Version
+1. **Clarity**: Short paragraphs and bullet points for readability.
+2. **Visuals**: Integrated the diagram logically in the "RLHF Process" section.
+
 ---
 
 ## Goals
