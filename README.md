@@ -3,11 +3,11 @@
 ## Overview
 This project demonstrates how human feedback can be integrated to enhance the training of large language models (LLMs) using Reinforcement Learning (RL). The primary goal is to improve the contextual relevance and performance of Transformer-based models, such as GPT, through Reinforcement Learning with Human Feedback (RLHF).
 
-### Key Highlights:
+The Reinforcement Learning with Human Feedback (RLHF) process involves several components working together to align a language model with human preferences. The key steps include:
+
 - **Initial Model**: A pre-trained language model is the starting point.
 - **Reward Model**: Built to evaluate outputs based on human preferences.
 - **Reinforcement Learning**: Fine-tunes the model using techniques like **Proximal Policy Optimization (PPO)**.
-
 
 The diagram below illustrates the high-level workflow of RLHF. It highlights how the initial language model is tuned iteratively using a reward model and RL techniques to align outputs with human preferences:
 
