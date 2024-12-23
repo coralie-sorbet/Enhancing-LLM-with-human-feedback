@@ -63,10 +63,9 @@ The PPO model demonstrates a significant improvement in reward scores compared t
 
 Below, a barplot and a boxplot  illustrate the comparative scores of the Reward Model and PPO Model.
 
-<p align="center">
-  <img width="422" alt="image" src="https://github.com/user-attachments/assets/3548f5c1-e134-4758-916e-f9f84a010b83" />
-  <img width="416" alt="image" src="https://github.com/user-attachments/assets/e592cbb4-72a9-453b-bc9f-84454466a7cf" />
-</p>
+<img width="422" alt="image" src="https://github.com/user-attachments/assets/3548f5c1-e134-4758-916e-f9f84a010b83" />
+
+<img width="416" alt="image" src="https://github.com/user-attachments/assets/e592cbb4-72a9-453b-bc9f-84454466a7cf" />
 
 #### Boxplot: Comparison of Scores
 The boxplot provides a clear comparison of the score distributions for the Reward Model and PPO Model. It highlights several key insights:
