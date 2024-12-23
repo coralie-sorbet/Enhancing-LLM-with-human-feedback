@@ -2,8 +2,12 @@
 
 ## Overview
 This project explores the integration of human feedback to enhance the training of Large Language Models (LLMs) using Reinforcement Learning (RL). The goal is to improve the contextual relevance and performance of Transformer-based models, such as GPT, via Reinforcement Learning with Human Feedback (RLHF).
+The diagram below provides a high-level overview of the RLHF process, showing how the initial model is tuned using a reward model and reinforcement learning with techniques like PPO.
+<img width="475" alt="image" src="https://github.com/user-attachments/assets/02219518-24c9-4246-859d-9b85404da0f7" />
+
 
 While full-scale RLHF training can be resource-intensive, this project demonstrates core concepts with a more resource-efficient approach.
+
 
 ---
 
