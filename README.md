@@ -7,7 +7,14 @@ While full-scale RLHF training can be resource-intensive, this project demonstra
 
 ---
 
-## Objectives
+## Goals
+- **Enhance LLMs using human feedback**: Improve language models' alignment with human expectations.
+- **Demonstrate RLHF concepts**: Provide a simplified implementation that balances performance and computational efficiency.
+- **Share findings**: Highlight the impact of RLHF on LLM performance and its limitations.
+
+---
+
+## Methodology
 
 ### 1. Understanding and Utilizing Transformers
 - **Transformers**:
@@ -32,6 +39,13 @@ While full-scale RLHF training can be resource-intensive, this project demonstra
 
 ---
 
+## Key Findings
+- **Improved Alignment**: RLHF enables LLMs to produce responses better aligned with human preferences.
+- **Trade-offs**: Computational cost remains a significant barrier for large-scale implementations.
+- **Simplified Tools**: Libraries like TRL streamline RLHF processes for smaller-scale experimentation.
+
+---
+
 ## Installation
 
 Install the `trl` library using `pip`:
@@ -41,11 +55,13 @@ pip install trl
 ```
 
 ---
-## RewardTrainer Example
+## Examples
+
+### RewardTrainer Example
 
 This is a basic example of how to use the `RewardTrainer` from the `trl` library to train a model.
 
-### Code Example
+#### Code Example
 
 ```python
 from trl import RewardConfig, RewardTrainer
@@ -74,12 +90,13 @@ trainer = RewardTrainer(
 )
 trainer.train()
 ```
-## PPOTrainer Example
+
+### PPOTrainer Example
 
 Here’s a minimal example of using `PPOTrainer` from Hugging Face’s `trl` library to fine-tune an LLM using Proximal Policy Optimization (PPO).  
 This example assumes you have a dataset and models ready.
 
-### Code Example
+#### Code Example
 
 ```python
 from trl import PPOConfig, PPOTrainer
@@ -103,8 +120,9 @@ trainer = PPOTrainer(
 
 # Start training
 trainer.train()
-
 ```
+
+---
 
 ## Project Structure
 
@@ -115,6 +133,8 @@ project/
 ├── README.md                # Overview of the project
 └── REPORT.md                # Detailed explanation
 ```
+
+---
 
 ## Resources and References
 
@@ -131,5 +151,4 @@ project/
 - [PPO Explained](https://www.youtube.com/watch?v=5P7I-xPq8u8)
 - [RLHF Blog Post](https://huggingface.co/blog/rlhf)
 - [Hugging Face RLHF Course](https://www.youtube.com/watch?v=2MBJOuVq380)
-
 
