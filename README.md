@@ -9,7 +9,7 @@ The Reinforcement Learning with Human Feedback (RLHF) process involves several c
 - **Reward Model**: Built to evaluate outputs based on human preferences.
 - **Reinforcement Learning**: Fine-tunes the model using techniques like **Proximal Policy Optimization (PPO)**.
 
-The diagram below illustrates the high-level workflow of RLHF. It highlights how the initial language model is tuned iteratively using a reward model and RL techniques to align outputs with human preferences:
+The diagram below, taken from the [RLHF Blog Post](https://huggingface.co/blog/rlhf), illustrates the high-level workflow of RLHF. It highlights how the initial language model is tuned iteratively using a reward model and RL techniques to align outputs with human preferences:
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/02219518-24c9-4246-859d-9b85404da0f7" alt="RLHF Workflow" width="400">
