@@ -85,7 +85,7 @@ Together, these plots emphasize that PPO-optimized policies not only outperform 
 **Model Sizes**  
 - **Reward Model**: **479.31 MB**  
 - **PPO-optimized Policy Model**: **474.72 MB**
-- 
+  
 The slightly smaller size of the PPO model highlights its efficiency while retaining strong performance.
 
 
