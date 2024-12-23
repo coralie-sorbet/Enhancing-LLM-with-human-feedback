@@ -2,7 +2,7 @@
 
 ## Transformer Architectures: A Detailed Explanation
 
-Transformers, introduced in the seminal paper "Attention is All You Need" by Vaswani et al. (2017) [Vaswani et al., 2017](https://arxiv.org/abs/1706.03762), have become the foundation of modern Natural Language Processing (NLP). The key innovation lies in the use of the **self-attention mechanism**, which allows the model to weigh the importance of each input token relative to others, enabling it to capture both local and global dependencies in text.
+Transformers, introduced in the seminal paper "Attention is All You Need" by [Vaswani et al., 2017](https://arxiv.org/abs/1706.03762), have become the foundation of modern Natural Language Processing (NLP). The key innovation lies in the use of the **self-attention mechanism**, which allows the model to weigh the importance of each input token relative to others, enabling it to capture both local and global dependencies in text.
 
 #### Key Components
 1. **Multi-Head Self-Attention**:
