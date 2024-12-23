@@ -6,7 +6,7 @@ This project explores how human feedback can enhance the training of large langu
 
 The RLHF process integrates several key components to achieve this alignment:
 
-- **Initial Model**: A pre-trained language model serves as the starting point.  
+- **Initial Model**: A pre-trained language model is the starting point.  
 - **Reward Model**: Evaluates outputs based on human feedback to establish a training signal.  
 - **Reinforcement Learning**: Fine-tunes the model using advanced techniques like **Proximal Policy Optimization (PPO)**.  
 
@@ -29,9 +29,11 @@ For more details, see [REPORT.MD](./REPORT.MD)
 ---
 ## Key Findings
 
-Reinforcement Learning with Human Feedback (RLHF) significantly enhances the alignment of large language models (LLMs) with human preferences. By leveraging the reward model and Proximal Policy Optimization (PPO), RLHF bridges the gap between generic pre-trained models and human-centered outputs, making the generated responses more aligned with user expectations.
+Reinforcement Learning with Human Feedback (RLHF) significantly enhances the alignment of large language models (LLMs) with human preferences. By leveraging the reward model and Proximal Policy Optimization (PPO), RLHF bridges the gap between generic pre-trained models and human-centred outputs, making the generated responses more aligned with user expectations.
 
 While RLHF offers substantial improvements, it comes with the challenge of high computational costs, especially when scaling up. This barrier emphasizes the need for efficient methodologies, particularly in environments with limited resources or extensive datasets. Libraries like TRL simplify the implementation of RLHF, enabling smaller-scale experiments and allowing researchers to explore the concepts of RLHF without requiring extensive computational infrastructure.
+
+Despite these challenges, the results obtained demonstrate a clear performance improvement, showing that with the right methodologies, RLHF can significantly optimize large language models. These findings suggest that RLHF has the potential to provide better outputs in practical applications, such as chatbots, content generation, and other interactive AI systems.
 
 ### Reward Model Evaluation
 
