@@ -58,7 +58,7 @@ Below, a barplot and a boxplot illustrate the comparative scores of the Reward M
 
 <p align="center">
   <img width="422" alt="image" src="https://github.com/user-attachments/assets/3548f5c1-e134-4758-916e-f9f84a010b83" />
-  <img width="416" alt="image" src="https://github.com/user-attachments/assets/e592cbb4-72a9-453b-bc9f-84454466a7cf" />
+  <img width="422" alt="image" src="https://github.com/user-attachments/assets/e592cbb4-72a9-453b-bc9f-84454466a7cf" />
 </p>
 
 #### Insights from the Boxplot
