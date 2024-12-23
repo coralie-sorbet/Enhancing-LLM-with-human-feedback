@@ -11,16 +11,12 @@ This project demonstrates how human feedback can be integrated to enhance the tr
 
 The diagram below illustrates the high-level workflow of RLHF. It highlights how the initial language model is tuned iteratively using a reward model and RL techniques to align outputs with human preferences:
 
-![RLHF Workflow](https://github.com/user-attachments/assets/02219518-24c9-4246-859d-9b85404da0f7)
-
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/02219518-24c9-4246-859d-9b85404da0f7" alt="RLHF Workflow" width="400">
+</div>
 
 While full-scale RLHF training can be resource-intensive, this project simplifies the process to demonstrate **core concepts** in a more **resource-efficient manner**, making it accessible for experimentation and learning.
 
----
-
-### Improvements in this Version
-1. **Clarity**: Short paragraphs and bullet points for readability.
-2. **Visuals**: Integrated the diagram logically in the "RLHF Process" section.
 
 ---
 
