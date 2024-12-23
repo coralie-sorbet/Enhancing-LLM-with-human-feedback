@@ -29,58 +29,55 @@ For more details, see [REPORT.MD](./REPORT.MD)
 ---
 ## Key Findings
 
-**Improved Alignment**  
-RLHF enables LLMs to produce responses better aligned with human preferences.
+Reinforcement Learning with Human Feedback (RLHF) significantly enhances the alignment of large language models (LLMs) with human preferences. By leveraging the reward model and Proximal Policy Optimization (PPO), RLHF bridges the gap between generic pre-trained models and human-centered outputs, making the generated responses more aligned with user expectations.
 
-**Trade-offs**  
-Computational cost remains a significant barrier for large-scale implementations.
+While RLHF offers substantial improvements, it comes with the challenge of high computational costs, especially when scaling up. This barrier emphasizes the need for efficient methodologies, particularly in environments with limited resources or extensive datasets. Libraries like TRL simplify the implementation of RLHF, enabling smaller-scale experiments and allowing researchers to explore the concepts of RLHF without requiring extensive computational infrastructure.
 
-**Simplified Tools**  
-Libraries like TRL streamline RLHF processes for smaller-scale experimentation.
+### Reward Model Evaluation
 
-The reward model achieved the following evaluation results:
+The evaluation of the reward model is based on two key metrics: `eval_loss` and `eval_accuracy`. These metrics provide insights into the model's performance in terms of both prediction quality and classification accuracy.
 
 - **`eval_loss`**: **0.6931**  
-  This represents the cross-entropy loss during evaluation. A lower loss indicates better performance, though the ideal value depends on the specific task and dataset.
+  This cross-entropy loss value during evaluation reflects the model's ability to predict outputs. A lower value generally indicates better performance, though the optimal loss depends on the specific dataset and task.
 
 - **`eval_accuracy`**: **0.7473**  
-  The model correctly classified **74.73%** of the evaluation samples. While this is a good starting point, there's still room for improvement.
+  The reward model correctly classified **74.73%** of the evaluation samples. While this is a promising baseline, there is scope for further optimization.
 
-**Comparison of Scores**  
-- **Average Reward Model Score**: **-0.5434042** (evaluated on the entire training dataset)  
-- **Average PPO Model Score**: **0.33177295** (evaluated on 10% of the training dataset for memory and time considerations, with potential for improvement if the sample size is increased).
+### Comparative Scores
+- **Average Reward Model Score**: **-0.5434042** (evaluated on the entire training dataset).  
+- **Average PPO Model Score**: **0.33177295** (evaluated on 10% of the training dataset due to memory and time constraints).  
 
-The PPO model demonstrates a significant improvement in reward scores compared to the reward model. This suggests that optimizing the policy with Proximal Policy Optimization (PPO) enables the model to better align with the desired reward function, even when evaluated on a smaller subset of the data. This indicates that PPO-optimized policies not only adhere more closely to human preferences but also show promise for scalability with further training.
+The significant improvement in the PPO model’s scores underscores its ability to optimize policy alignment with human preferences effectively. Even when evaluated on a smaller dataset, PPO demonstrates superior performance, suggesting that it is not only more efficient but also scalable with further training.
+
 
 ### Visualization and Interpretation of Scores
 
-Below, a barplot and a boxplot  illustrate the comparative scores of the Reward Model and PPO Model.
+Below, a barplot and a boxplot illustrate the comparative scores of the Reward Model and PPO Model:
 
 <p align="center">
   <img width="422" alt="image" src="https://github.com/user-attachments/assets/3548f5c1-e134-4758-916e-f9f84a010b83" />
   <img width="416" alt="image" src="https://github.com/user-attachments/assets/e592cbb4-72a9-453b-bc9f-84454466a7cf" />
 </p>
 
-#### Boxplot: Comparison of Scores
-The boxplot provides a clear comparison of the score distributions for the Reward Model and PPO Model. It highlights several key insights:
-- The Reward Model has a median score below zero, indicating a general tendency toward lower alignment with the reward function. Additionally, the spread of its scores is narrower, with significant clustering around negative values and a few outliers in both directions.
-- In contrast, the PPO Model shows a positive median score, suggesting a noticeable improvement in alignment with the reward function. Its broader interquartile range reflects greater variability, which may result from exploring diverse policies during optimization.
+#### Insights from the Boxplot
+The boxplot highlights key differences in the score distributions of the two models:
+- The **Reward Model** exhibits a median score below zero, indicating a general tendency toward lower alignment with the reward function. Its narrower spread suggests limited variability, with notable clustering around negative values.
+- The **PPO Model**, by contrast, shows a positive median score, reflecting substantial improvement in alignment with the reward function. Its broader interquartile range indicates greater exploration and diversity in outputs during optimization.
 
-The improvement in median and overall distribution suggests that PPO successfully optimizes the policy toward producing outputs more aligned with human preferences.
+The improved median and distribution for the PPO model underscore its capability to generate outputs better aligned with human preferences.
 
-#### Histogram: Distribution of Scores
-The histogram complements the boxplot by visualizing the frequency distribution of scores for both models:
-- The Reward Model's scores are concentrated around negative values, with a peak close to -1. This indicates that many samples do not meet the desired reward function criteria.
-- The PPO Model's scores shift toward positive values, with a peak near zero and a heavier tail on the positive side. This demonstrates that PPO optimization leads to better overall alignment with the reward function for a larger portion of the dataset.
+#### Insights from the Histogram
+The histogram provides a deeper look at score distributions:
+- **Reward Model**: Scores are concentrated around negative values, with a peak near -1. This suggests limited alignment with human preferences for most samples.
+- **PPO Model**: Scores shift toward positive values, with a peak near zero and a heavier tail on the positive side. This shift indicates a better overall alignment of PPO-optimized policies with the reward function.
 
-Together, these plots emphasize that PPO-optimized policies not only outperform the baseline Reward Model in terms of alignment but also exhibit a broader and more promising distribution of scores. This reinforces the value of PPO in improving the effectiveness of RLHF.
+Together, these visualizations emphasize that PPO not only outperforms the baseline Reward Model but also demonstrates a promising ability to generalize and scale effectively.
 
-**Model Sizes**  
+### Model Sizes
 - **Reward Model**: **479.31 MB**  
 - **PPO-optimized Policy Model**: **474.72 MB**
-  
-The slightly smaller size of the PPO model highlights its efficiency while retaining strong performance.
 
+The slightly smaller size of the PPO model highlights its computational efficiency without compromising performance, making it an attractive choice for large-scale implementations.
 
 ---
 ## Installation
