@@ -27,28 +27,11 @@ While full-scale RLHF training can be resource-intensive, this project simplifie
 
 ---
 
-## Methodology
-
-### 1. Understanding and Utilizing Transformers
-- **Transformers**:
-  - Introduced in [Vaswani et al., 2017](https://arxiv.org/abs/1706.03762), Transformers leverage self-attention mechanisms to process sequential data efficiently.
-  - Key components:
-    - **Multi-Head Attention**: Captures token relationships in input sequences.
-    - **Feedforward Layers**: Further processes representations from attention layers.
-    - **Positional Encoding**: Encodes sequence order for better context understanding.
-
-- **Causal Transformers**:
-  - Models like GPT and LLAMA predict the next token based on prior context, making them ideal for language generation tasks.
-
-### 2. Reinforcement Learning with Human Feedback (RLHF)
-- **Overview**:
-  RLHF combines reinforcement learning and human preferences to fine-tune LLMs. It involves:
-  1. Training a reward model (RM) using human-labeled data.
-  2. Optimizing the LLM with RL (e.g., PPO) based on rewards provided by the RM.
-  3. Fine-tuning the LLM to align its responses with human expectations.
-
-- **Challenges**:
-  - RLHF can be computationally expensive but is simplified with libraries like [Hugging Face’s TRL](https://github.com/huggingface/trl).
+## Methodology Overview
+This project leverages **Transformers** and integrates **Reinforcement Learning with Human Feedback (RLHF)** to fine-tune large language models.  
+- Transformers process sequential data with self-attention mechanisms ([Vaswani et al., 2017](https://arxiv.org/abs/1706.03762)).
+- RLHF aligns model outputs with human preferences via a reward model and RL techniques such as PPO.  
+For more details, see [REPORT.MD](./REPORT.MD)
 
 ---
 
