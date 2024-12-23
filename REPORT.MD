@@ -2,14 +2,12 @@
 
 ## Transformer Architectures: A Detailed Explanation
 
-Transformers, introduced in the seminal paper "Attention is All You Need" by [Vaswani et al., 2017](https://arxiv.org/abs/1706.03762), have become the foundation of modern Natural Language Processing (NLP). The key innovation lies in the use of the **self-attention mechanism**, which allows the model to weigh the importance of each input token relative to others, enabling it to capture both local and global dependencies in text.
+Transformers, introduced in the seminal paper "Attention is All You Need" by [Vaswani et al., 2017](https://arxiv.org/abs/1706.03762), have revolutionized Natural Language Processing (NLP). The key innovation in Transformer architecture is the self-attention mechanism, which allows the model to dynamically weigh the importance of each input token relative to others. This enables the model to capture both local and global dependencies in text efficiently.
 
 #### Key Components
 1. **Multi-Head Self-Attention**:
-   - The self-attention mechanism computes a weighted sum of input tokens, where the weights (attention scores) are learned during training.
-   - **Multi-head attention** extends this idea by allowing the model to focus on different parts of the input simultaneously, improving its ability to capture nuanced relationships.
-
-**Mathematical representation**:
+   - The self-attention mechanism computes a weighted sum of input tokens, where the attention scores are learned during training. Multi-head attention allows the model to attend to different parts of the input simultaneously, enhancing its ability to capture nuanced relationships across different token dependencies.
+   - **Mathematical representation**:
 
 $$
 \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
@@ -17,7 +15,6 @@ $$
 
 Where $Q$, $K$, and $V$ are the query, key, and value matrices, and ${d_k}$ is the dimensionality of the keys.
 
-**Feedforward Layers:**
 
 2. **Feedforward Layers**:
    - After the attention step, the output of each token is passed through position-wise fully connected layers. These layers apply non-linear transformations to each token's representation independently, ensuring the model can capture complex relationships.
@@ -26,44 +23,44 @@ Where $Q$, $K$, and $V$ are the query, key, and value matrices, and ${d_k}$ is t
    - Since Transformers process input tokens in parallel, they lack the inherent understanding of token order. To address this, positional encodings are added to the input embeddings, typically in the form of sinusoidal functions, ensuring the model retains the sequence order.
 
 ### Causal Transformers
-Causal Transformers, like GPT and LLAMA, are specialized for autoregressive tasks, where the model predicts the next token in a sequence based on prior tokens. They are trained using a left-to-right masking mechanism to ensure each token only attends to its predecessors.
+Causal Transformers, such as GPT, LLAMA, and others, are optimized for autoregressive tasks, where the model predicts the next token in a sequence based on prior tokens. These models are trained using a left-to-right masking mechanism, ensuring each token attends only to its predecessors during training, which helps them perform well on text generation tasks.
 
 Key characteristics:
-- **Training Objective**: Minimize the negative log-likelihood of the next token:
+- **Training Objective**: Causal Transformers are trained to minimize the negative log-likelihood of the next token:
 
 $\mathcal{L} = -\sum_{t=1}^{T} \log P(x_t \mid x_{<t})$
 
 Where $x_t$ represents the token at position $t$ and $x_{<t}$ denotes all prior tokens in the sequence.
 
-- **Applications**: Causal Transformers are widely used in text generation, code completion, dialogue systems, and any scenario where predicting sequential data is required. For instance, GPT models are frequently used in chatbots and automated content creation.
+- **Applications**: These models are used in text generation, dialogue systems, code completion, and many other areas where predicting the next element in a sequence is critical.
 
 ---
 
 ## Reinforcement Learning with Human Feedback (RLHF)
 
 ### Conceptual Framework
-Reinforcement Learning with Human Feedback (RLHF) helps bridge the gap between machine-generated outputs and human expectations. In RLHF, human annotators provide feedback on the quality of generated outputs, which guides the model's behaviour to better align with human preferences. This feedback loop refines the model to make its responses more relevant and appropriate.
+Reinforcement Learning with Human Feedback (RLHF) improves the alignment of language models with human preferences by incorporating human feedback during training. This feedback guides the model to adjust its behaviour to better match human expectations, refining its responses to be more relevant, coherent, and aligned with user intentions.
 
 #### Steps in RLHF:
-1. **Training a Reward Model (RM):**
-   - Human evaluators rank the model's outputs based on criteria such as relevance, coherence, and alignment with human expectations. These rankings are then used to train a Reward Model (RM), which predicts a scalar reward score for each output.
+- 1. **Training a Reward Model (RM):** 
+Human evaluators rank the model's outputs based on specific criteria such as relevance, coherence, and alignment with human expectations. These rankings are used to train a Reward Model (RM), which predicts a scalar reward score for each output.
 
-2. **Optimizing the Language Model with Reinforcement Learning:**
-   - The base Large Language Model (LLM) is fine-tuned using Reinforcement Learning (RL), specifically with Proximal Policy Optimization (PPO). In this process, the RM is used as a reward function, guiding the LLM to maximize the expected reward. The goal is to align the model's responses more closely with human preferences.
-   - The objective function for RLHF is:
+- 2. **Optimizing the Language Model with Reinforcement Learning:**
+The language model is fine-tuned using Reinforcement Learning, particularly Proximal Policy Optimization (PPO). The RM is employed as a reward function, guiding the model to maximize expected reward.
+The objective function for RLHF is:
 
 <p align="center">
   <b>max</b><sub>&#x3B8;</sub> <i>E</i><sub>x &#8764; &#x3C0;<sub>&#x3B8;</sub></sub>[R(x)]
 </p>
 
 Where:
-- $\pi_\theta$ is the **policy** (the model),
-- $R(x)$ is the **reward** for a given output $x$,
-- $\theta$ is the set of model parameters.
+   - $\pi_\theta$ is the **policy** (the model),
+   - $R(x)$ is the **reward** for a given output $x$,
+   - $\theta$ is the set of model parameters.
 
 #### Challenges
-- Computational Cost: Fine-tuning models with human feedback can be computationally expensive, requiring significant resources and time to train.
-- Balancing Fluency and Adherence to Human Preferences: One of the key challenges in RLHF is ensuring that the model remains fluent and coherent while strictly adhering to human feedback. There is often a trade-off between these two aspects.
+- **Computational Cost**: Training models with human feedback is resource-intensive, requiring significant computational resources and time.
+- **Balancing Fluency and Adherence to Human Preferences**: Ensuring the model remains fluent and coherent while adhering to human feedback is a delicate balance. Often, improvements in alignment come with the trade-off of reduced fluency or generalization.
 
 ### Practical Implementation
 - Libraries: Hugging Face's [TRL](https://github.com/huggingface/trl) provides utilities for implementing RLHF workflows efficiently.
@@ -88,7 +85,7 @@ $$
 \mathcal{L}^{\text{CLIP}}(\theta) = \mathbb{E}\left[\min\left(r_t(\theta) A_t, \text{clip}(r_t(\theta), 1 - \epsilon, 1 + \epsilon) A_t\right)\right]
 $$
 
-where $r_t(\theta)$ is the probability ratio and $A_t$ is the advantage function.
+where $r_t(\theta)$ is the probability ratio, $\epsilon$ is a small hyperparameter that controls the clipping, and $A_t$ is the advantage function.
 
 2. **Entropy Regularization:**
    - To encourage the policy to explore diverse actions, PPO includes entropy regularization. This discourages overly deterministic policies, promoting a more diverse set of responses from the model.
@@ -106,7 +103,7 @@ In this project, RLHF is applied to fine-tune a GPT-2 model. The fine-tuned mode
 
 ### Broader Applications
 - **Content Moderation:** Aligning models with ethical and safety guidelines to filter harmful or inappropriate content.
-- **Education:** Developing personalized tutoring systems that can adapt to individual student needs by adjusting the model's behavior based on feedback.
+- **Education:** Developing personalized tutoring systems that can adapt to individual student needs by adjusting the model's behaviour based on feedback.
 - **Healthcare:** Using RLHF to generate patient-friendly explanations of medical information, ensuring both clarity and accuracy.
 
 ### Future Work
