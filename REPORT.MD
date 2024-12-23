@@ -42,10 +42,10 @@ Where $x_t$ represents the token at position $t$ and $x_{<t}$ denotes all prior 
 Reinforcement Learning with Human Feedback (RLHF) improves the alignment of language models with human preferences by incorporating human feedback during training. This feedback guides the model to adjust its behaviour to better match human expectations, refining its responses to be more relevant, coherent, and aligned with user intentions.
 
 #### Steps in RLHF:
-- 1. **Training a Reward Model (RM):** 
+1. **Training a Reward Model (RM):** 
 Human evaluators rank the model's outputs based on specific criteria such as relevance, coherence, and alignment with human expectations. These rankings are used to train a Reward Model (RM), which predicts a scalar reward score for each output.
 
-- 2. **Optimizing the Language Model with Reinforcement Learning:**
+2. **Optimizing the Language Model with Reinforcement Learning:**
 The language model is fine-tuned using Reinforcement Learning, particularly Proximal Policy Optimization (PPO). The RM is employed as a reward function, guiding the model to maximize expected reward.
 The objective function for RLHF is:
 
