@@ -105,9 +105,16 @@ from datasets import load_dataset
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
 # Load pre-trained model and tokenizer
-tokenizer = AutoTokenizer.from_pretrained("drive/MyDrive/M2 D3S/Math of DL/Project/tokenizer")
+model_name = "gpt2" 
+model_config = ModelConfig(model_name_or_path=model_name)
+tokenizer = AutoTokenizer.from_pretrained(
+    model_config.model_name_or_path,
+    trust_remote_code=model_config.trust_remote_code,
+    use_fast=True
+)
+tokenizer.pad_token = tokenizer.eos_token
 model = AutoModelForSequenceClassification.from_pretrained(
-    "Qwen/Qwen2.5-0.5B-Instruct", num_labels=1
+    model_config.model_name_or_path, num_labels=1, trust_remote_code=model_config.trust_remote_code
 )
 model.config.pad_token_id = tokenizer.pad_token_id
 
