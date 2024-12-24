@@ -177,41 +177,27 @@ $$
 - **Broader Applications**:  
   RLHF has wide-reaching applications in areas such as content moderation, personalized education, and healthcare. In content moderation, RLHF helps align models with ethical standards, ensuring they produce safe and appropriate content. In education, it enables the creation of adaptive tutoring systems that respond to individu
 
----
+- **Future Work**:
 
-## Applications and Future Directions
-
-### Demonstrated Use Case
-
-In this project, RLHF is used to fine-tune a GPT-2 model. By incorporating human feedback, the model generates text that closely aligns with human preferences, ensuring that outputs are relevant and coherent. PPO, guided by the reward model, helps optimize the language model to better reflect these preferences.
-
-### Broader Applications
-
-- **Content Moderation**: Aligning models with ethical guidelines to ensure the generation of safe and appropriate content.
-- **Education**: Developing personalized tutoring systems that adapt to the needs and preferences of individual students.
-- **Healthcare**: Generating clear, patient-friendly explanations of medical information, ensuring both clarity and accuracy.
-
-### Future Work
-
-- **Cost-Efficient Alternatives**:  
+  - **Cost-Efficient Alternatives**:  
   Researchers are exploring hybrid methods that combine supervised fine-tuning with lightweight RL techniques to reduce the computational burden associated with RLHF while maintaining high-quality outputs.
 
-- **Scaling to Larger Models**:  
+  - **Scaling to Larger Models**:  
   RLHF can be applied to large-scale models like GPT-4 and LLAMA 2. However, scaling RLHF to these models introduces challenges related to efficiency, resource utilization, and maintaining the quality of human alignment. Investigating efficient ways to scale RLHF will be key to improving model performance in diverse domains.
 
 ---
 
 
 ## References
-- [CleanRL's PPO Implementation](https://github.com/vwxyzjn/cleanrl/tree/master) offers a minimalistic implementation.
-- Hugging Face’s [Quickstart Guide](https://huggingface.co/blog/rlhf) provides practical insights into PPO with RLHF.
 
-- [Self-Attention in NLP](https://www.youtube.com/watch?v=5vcj8kSwBCY)
-- [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)
-- [Attention? Attention!](https://lilianweng.github.io/lil-log/2018/06/24/attention-attention.html)
-- [Attention is all you need](https://arxiv.org/pdf/1706.03762.pdf)
-1. Vaswani, A., et al. (2017). Attention Is All You Need. [arXiv:1706.03762](https://arxiv.org/abs/1706.03762)
-2. OpenAI. (2022). Training language models to follow instructions with human feedback. [arXiv:2203.02155](https://arxiv.org/abs/2203.02155)
-3. Hugging Face. (2023). Reinforcement Learning with Human Feedback. [Blog Post](https://huggingface.co/blog/rlhf)
-4. Schulman, J., et al. (2017). Proximal Policy Optimization Algorithms. [arXiv:1707.06347](https://arxiv.org/abs/1707.06347)
-5. Anthropic. (2022). Constitutional AI: Harmlessness from AI Feedback. [arXiv:2204.05862](https://arxiv.org/abs/2204.05862)
+- Vaswani, A., et al. (2017). *Attention Is All You Need*. [arXiv:1706.03762](https://arxiv.org/abs/1706.03762)
+- OpenAI. (2022). *Training Language Models to Follow Instructions with Human Feedback*. [arXiv:2203.02155](https://arxiv.org/abs/2203.02155)
+- Hugging Face. (2023). *Reinforcement Learning with Human Feedback*. [Blog Post](https://huggingface.co/blog/rlhf)
+- Schulman, J., et al. (2017). *Proximal Policy Optimization Algorithms*. [arXiv:1707.06347](https://arxiv.org/abs/1707.06347)
+- Anthropic. (2022). *Constitutional AI: Harmlessness from AI Feedback*. [arXiv:2204.05862](https://arxiv.org/abs/2204.05862)
+- [CleanRL's PPO Implementation](https://github.com/vwxyzjn/cleanrl/tree/master) - Minimalistic PPO implementation.
+- [Self-Attention in NLP (YouTube)](https://www.youtube.com/watch?v=5vcj8kSwBCY) - Video explanation of self-attention in NLP.
+- [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/) - A visual guide to understanding the transformer architecture.
+- [Attention? Attention!](https://lilianweng.github.io/lil-log/2018/06/24/attention-attention.html) - A blog post explaining attention mechanisms in detail.
+- 
+
