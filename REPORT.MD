@@ -54,9 +54,11 @@ $\text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)$
 
 This mechanism enables the model to analyze the input from multiple perspectives simultaneously.  
 
-The following diagram illustrates multi-head attention:  
-![](https://boring-guy.sh/img/masking-rl/multi_head_attention.svg)  
+The following diagram from [Vaswani et al., 2017](https://arxiv.org/abs/1706.03762) illustrates scaled dot-product attention multi-head attention:  
 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/1939da4c-2a3e-4aa2-919a-170302574c07" alt="multi head self attention" width="400">
+</div>
 ### Encoder-Decoder Structure  
 
 The Transformer architecture uses an **encoder-decoder** framework:  
