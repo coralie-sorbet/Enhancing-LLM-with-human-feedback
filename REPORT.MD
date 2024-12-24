@@ -30,7 +30,7 @@ The relationship between tokens is computed using the scaled dot product of the 
 
 $\text{Attention Score} = \frac{QK^T}{\sqrt{d_k}}$
 
-Here, $ d_k $ represents the dimensionality of the key vectors. Scaling by $ \sqrt{d_k} $ prevents excessively large values that can destabilize training.  
+Here, $d_k$ represents the dimensionality of the key vectors. Scaling by $\sqrt{d_k}$ prevents excessively large values that can destabilize training.  
 
 #### 4. Softmax Normalization  
 
