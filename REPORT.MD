@@ -10,7 +10,9 @@ Transformers, first introduced in the landmark paper *"Attention is All You Need
 
 #### 1. Input Representation  
 Transformers process sequences of tokens. Each token in the sequence is represented as a dense vector embedding:  
-$$ X = [x_1, x_2, ..., x_n] $$  
+$$
+X = [x_1, x_2, ..., x_n] 
+$$  
 
 - **Embeddings**: These vectors encode semantic information about the tokens.  
 - **Positional Encoding**: Since Transformers process tokens in parallel, positional encodings are added to embeddings to capture the order of tokens in the sequence. These are typically sinusoidal functions.  
@@ -19,7 +21,7 @@ $$ X = [x_1, x_2, ..., x_n] $$
 
 The self-attention mechanism allows the model to focus on different parts of the input sequence while processing each token. For every token, three vectors are derived using learned weight matrices:  
 
-$$ Q = XW^Q, \quad K = XW^K, \quad V = XW^V $$  
+$Q = XW^Q, \quad K = XW^K, \quad V = XW^V $$
 
 Here, $ Q $, $ K $, and $ V $ are the query, key, and value vectors, respectively, and $ W^Q $, $ W^K $, and $ W^V $ are learnable weight matrices.  
 
@@ -90,33 +92,6 @@ $$
 
 By leveraging these components, Transformers achieve state-of-the-art performance across a wide array of applications, demonstrating the power of self-attention and multi-head mechanisms.  
 
-
-- **Multi-Head Self-Attention**:
-  Self-attention is one of the most important concepts in modern machine learning, especially in natural language processing. It helps a model decide which parts of an input sequence are most relevant as it processes the data, allowing it to understand both small details and broader patterns. Multi-head attention takes this idea further by letting the model focus on multiple aspects of the input at once, which makes it even better at understanding complex relationships between tokens.
-
-  This approach lies at the heart of Transformer models, which have completely changed how we tackle tasks like language processing, computer vision, and speech recognition. Let’s explore how self-attention works and break down the math behind it in simple terms.
-
-  **Mathematical representation**:
-
-$$
-\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
-$$
-
-  Where $Q$, $K$, and $V$ are the query, key, and value matrices, and ${d_k}$ is the dimensionality of the keys.
-
-- **Feedforward Layers**:
-  After the attention step, the output of each token is passed through position-wise fully connected layers. These layers apply non-linear transformations to each token's representation independently, ensuring the model can capture complex relationships.
-
-- **Positional Encoding**:
-  Since Transformers process input tokens in parallel, they lack the inherent understanding of token order. To address this, positional encodings are added to the input embeddings, typically in the form of sinusoidal functions, ensuring the model retains the sequence order.
-
-The following diagram, adapted from "Attention is All You Need", illustrates the Transformer model architecture:
-
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/2542fd51-5e70-45dd-b792-91ce84eb0f7f" alt="The Transformer- model architecture" width="400">
-</div>
-
-The architecture comprises an encoder-decoder design. Encoders process input sequences, while decoders generate outputs by attending to both the encoder's representations and previously generated tokens.
 
 ### Causal Transformers
 Causal Transformers, such as GPT and LLAMA, are optimized for autoregressive tasks, where the model predicts the next token in a sequence based on prior tokens. These models use a left-to-right masking mechanism during training, ensuring each token attends only to its predecessors. This design helps them perform exceptionally well on text-generation tasks.
