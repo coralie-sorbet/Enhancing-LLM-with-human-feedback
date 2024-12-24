@@ -20,7 +20,7 @@ $X = [x_1, x_2, ..., x_n]$
 
 The self-attention mechanism allows the model to focus on different parts of the input sequence while processing each token. For every token, three vectors are derived using learned weight matrices:  
 
-$Q = XW^Q, \quad K = XW^K, \quad V = XW^V $$
+$Q = XW^Q, \quad K = XW^K, \quad V = XW^V$
 
 Here, $Q$, $K$, and $V$ are the query, key, and value vectors, respectively, and $W^Q$, $W^K$, and $W^V$ are learnable weight matrices.  
 
