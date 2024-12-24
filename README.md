@@ -183,16 +183,18 @@ project/
 ## Resources and References
 
 ### Papers
+- [Anthropic’s Work on RLHF](https://arxiv.org/abs/2204.05862)
 - [Attention is All You Need](https://arxiv.org/abs/1706.03762)
 - [OpenAI’s RLHF for ChatGPT](https://arxiv.org/abs/2203.02155)
-- [Anthropic’s Work on RLHF](https://arxiv.org/abs/2204.05862)
 
 ### Libraries
-- [Hugging Face’s TRL](https://github.com/huggingface/trl)
 - [CleanRL’s PPO Implementation](https://github.com/vwxyzjn/cleanrl/tree/master)
+- [Hugging Face’s TRL](https://github.com/huggingface/trl)
 
 ### Tutorials and Videos
+- [Attention? Attention!](https://lilianweng.github.io/lil-log/2018/06/24/attention-attention.html) - A blog post explaining attention mechanisms in detail.
+- [Hugging Face RLHF Course](https://www.youtube.com/watch?v=2MBJOuVq380)
 - [PPO Explained](https://www.youtube.com/watch?v=5P7I-xPq8u8)
 - [RLHF Blog Post](https://huggingface.co/blog/rlhf)
-- [Hugging Face RLHF Course](https://www.youtube.com/watch?v=2MBJOuVq380)
-
+- [Self-Attention in NLP (YouTube)](https://www.youtube.com/watch?v=5vcj8kSwBCY) - Video explanation of self-attention in NLP.
+- [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/) - A visual guide to understanding the transformer architecture.
