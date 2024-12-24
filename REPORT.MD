@@ -12,9 +12,9 @@ Transformers, introduced in the seminal paper "Attention is All You Need" by [Va
 
   **Mathematical representation**:
 
-  $$
-  \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
-  $$
+$$
+\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
+$$
 
   Where $Q$, $K$, and $V$ are the query, key, and value matrices, and ${d_k}$ is the dimensionality of the keys.
 
@@ -25,7 +25,7 @@ Transformers, introduced in the seminal paper "Attention is All You Need" by [Va
   Since Transformers process input tokens in parallel, they lack the inherent understanding of token order. To address this, positional encodings are added to the input embeddings, typically in the form of sinusoidal functions, ensuring the model retains the sequence order.
 
 ### Causal Transformers
-Causal Transformers, such as GPT and LLAMA, are optimized for autoregressive tasks, where the model predicts the next token in a sequence based on prior tokens. These models use a left-to-right masking mechanism during training, ensuring each token attends only to its predecessors. This design helps them perform exceptionally well on text generation tasks.
+Causal Transformers, such as GPT and LLAMA, are optimized for autoregressive tasks, where the model predicts the next token in a sequence based on prior tokens. These models use a left-to-right masking mechanism during training, ensuring each token attends only to its predecessors. This design helps them perform exceptionally well on text-generation tasks.
 
 #### Key Characteristics
 - **Training Objective**:
