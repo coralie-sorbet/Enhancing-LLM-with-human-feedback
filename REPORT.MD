@@ -26,7 +26,7 @@ Here, $Q$, $K$, and $V$ are the query, key, and value vectors, respectively, and
 
 #### 3. Attention Score Calculation  
 
-The relationship between tokens is computed using **scaled dot-product attention**. The scaled dot-product is calculated by taking the dot product of the query ($Q$) and key ($K$) vectors, and then scaling it by the square root of the key dimension ($\sqrt{d_k}$), where $d_k$ is the dimensionality of the key vectors. This scaling helps stabilize gradients during training by preventing overly large values:
+The relationship between tokens is computed using **scaled dot-product attention**. The scaled dot-product is calculated by taking the dot product of the query $Q$ and key $K$ vectors, and then scaling it by the square root of the key dimension $\sqrt{d_k}$, where $d_k$ is the dimensionality of the key vectors. This scaling helps stabilize gradients during training by preventing overly large values:
 
 $\text{Attention Score} = \frac{QK^T}{\sqrt{d_k}}$
 
