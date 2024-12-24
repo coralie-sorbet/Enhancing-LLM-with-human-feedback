@@ -33,20 +33,23 @@ Here, $ d_k $ represents the dimensionality of the key vectors. Scaling by $ \sq
 
 #### 4. Softmax Normalization  
 
-The attention scores are normalized using the softmax function to convert them into probabilities:  
-$$ \text{Softmax}(\text{Attention Score}) = \frac{\exp(\text{Attention Score})}{\sum \exp(\text{Attention Score})} $$  
+The attention scores are normalized using the softmax function to convert them into probabilities:
+
+$\text{Softmax}(\text{Attention Score}) = \frac{\exp(\text{Attention Score})}{\sum \exp(\text{Attention Score})}$
 
 #### 5. Output Calculation  
 
 The final output for each token is computed as a weighted sum of the value vectors, where the normalized attention scores serve as weights:  
-$$ \text{Output} = \text{Softmax}(\text{Attention Score}) \times V $$  
+
+$\text{Output} = \text{Softmax}(\text{Attention Score}) \times V$
 
 #### 6. Multi-Head Attention  
 
 To improve the model's ability to capture diverse relationships within the input sequence, Transformers use **multi-head attention**. Multiple sets of $ Q $, $ K $, and $ V $ are computed to create multiple "heads" of attention, each focusing on different aspects of the input. These outputs are concatenated and transformed linearly:  
 
-$$ \text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, ..., \text{head}_h)W^O $$  
-$$ \text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V) $$  
+$\text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, ..., \text{head}_h)W^O$
+
+$\text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)$
 
 This mechanism enables the model to analyze the input from multiple perspectives simultaneously.  
 
