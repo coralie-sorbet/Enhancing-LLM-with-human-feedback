@@ -31,11 +31,9 @@ Causal Transformers, such as GPT and LLAMA, are optimized for autoregressive tas
 - **Training Objective**:
   Causal Transformers are trained to minimize the negative log-likelihood of the next token:
 
-$$
-\mathcal{L} = -\sum_{t=1}^{T} \log P(x_t \mid x_{<t})
-$$
+$\mathcal{L} = -\sum_{t=1}^{T} \log P(x_t \mid x_{<t})$
 
-  Where $x_t$ represents the token at position $t$ and $x_{<t}$ denotes all prior tokens in the sequence.
+Where $x_t$ represents the token at position $t$ and $x_{<t}$ denotes all prior tokens in the sequence.
 
 - **Applications**:
   These models are widely used in text generation, dialogue systems, code completion, and other areas requiring next-token prediction.
