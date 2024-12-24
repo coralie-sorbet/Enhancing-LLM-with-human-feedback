@@ -175,7 +175,7 @@ $$
 ### Future Work and Applications
 
 - **Broader Applications**:  
-  RLHF has wide-reaching applications in areas such as content moderation, personalized education, and healthcare. In content moderation, RLHF helps align models with ethical standards, ensuring they produce safe and appropriate content. In education, it enables the creation of adaptive tutoring systems that respond to individual.
+  RLHF has wide-reaching applications in areas such as content moderation, personalized education, and healthcare. In content moderation, RLHF helps align models with ethical standards, ensuring they produce safe and appropriate content. In education, it enables the creation of adaptive tutoring systems that respond to individuals.
 
 - **Future Work**:
 
@@ -190,15 +190,21 @@ $$
 
 ## References
 
-- Anthropic. (2022). *Constitutional AI: Harmlessness from AI Feedback*. [arXiv:2204.05862](https://arxiv.org/abs/2204.05862)
-- Hugging Face. (2023). *Reinforcement Learning with Human Feedback*. [Blog Post](https://huggingface.co/blog/rlhf)
-- [CleanRL's PPO Implementation](https://github.com/vwxyzjn/cleanrl/tree/master) - Minimalistic PPO implementation.
+### Papers
+- [Anthropic’s Work on RLHF](https://arxiv.org/abs/2204.05862)
+- [Attention is All You Need](https://arxiv.org/abs/1706.03762)
+- [OpenAI’s RLHF for ChatGPT](https://arxiv.org/abs/2203.02155)
+
+### Libraries
+- [CleanRL’s PPO Implementation](https://github.com/vwxyzjn/cleanrl/tree/master)
+- [Hugging Face’s TRL](https://github.com/huggingface/trl)
+
+### Tutorials and Videos
+- [Attention? Attention!](https://lilianweng.github.io/lil-log/2018/06/24/attention-attention.html) - A blog post explaining attention mechanisms in detail.
+- [Hugging Face RLHF Course](https://www.youtube.com/watch?v=2MBJOuVq380)
+- [PPO Explained](https://www.youtube.com/watch?v=5P7I-xPq8u8)
+- [RLHF Blog Post](https://huggingface.co/blog/rlhf)
 - [Self-Attention in NLP (YouTube)](https://www.youtube.com/watch?v=5vcj8kSwBCY) - Video explanation of self-attention in NLP.
 - [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/) - A visual guide to understanding the transformer architecture.
-- [Attention? Attention!](https://lilianweng.github.io/lil-log/2018/06/24/attention-attention.html) - A blog post explaining attention mechanisms in detail.
-- OpenAI. (2022). *Training Language Models to Follow Instructions with Human Feedback*. [arXiv:2203.02155](https://arxiv.org/abs/2203.02155)
-- Schulman, J., et al. (2017). *Proximal Policy Optimization Algorithms*. [arXiv:1707.06347](https://arxiv.org/abs/1707.06347)
-- Vaswani, A., et al. (2017). *Attention Is All You Need*. [arXiv:1706.03762](https://arxiv.org/abs/1706.03762)
-
 
 
