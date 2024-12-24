@@ -27,7 +27,8 @@ Here, $Q$, $K$, and $V$ are the query, key, and value vectors, respectively, and
 #### 3. Attention Score Calculation  
 
 The relationship between tokens is computed using the scaled dot product of the query and key vectors:  
-$$ \text{Attention Score} = \frac{QK^T}{\sqrt{d_k}} $$  
+
+$\text{Attention Score} = \frac{QK^T}{\sqrt{d_k}}$
 
 Here, $ d_k $ represents the dimensionality of the key vectors. Scaling by $ \sqrt{d_k} $ prevents excessively large values that can destabilize training.  
 
