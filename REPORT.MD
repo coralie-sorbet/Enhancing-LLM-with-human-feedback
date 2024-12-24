@@ -24,6 +24,10 @@ $$
 - **Positional Encoding**:
   Since Transformers process input tokens in parallel, they lack the inherent understanding of token order. To address this, positional encodings are added to the input embeddings, typically in the form of sinusoidal functions, ensuring the model retains the sequence order.
 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/02219518-24c9-4246-859d-9b85404da0f7" alt="RLHF Workflow" width="400">
+</div>
+
 
 ### Causal Transformers
 Causal Transformers, such as GPT and LLAMA, are optimized for autoregressive tasks, where the model predicts the next token in a sequence based on prior tokens. These models use a left-to-right masking mechanism during training, ensuring each token attends only to its predecessors. This design helps them perform exceptionally well on text-generation tasks.
