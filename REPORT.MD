@@ -78,10 +78,6 @@ The architecture, as visualized in the diagram below from [Vaswani et al., 2017]
   <img src="https://github.com/user-attachments/assets/2542fd51-5e70-45dd-b792-91ce84eb0f7f" alt="The Transformer- model architecture" width="400">  
 </div>  
 
-### Self-Attention in Transformers  
-
-The self-attention mechanism is central to both the encoder and decoder. It helps the model focus on relevant parts of the sequence while encoding input data or generating output predictions. This capability underpins the success of large-scale models like GPT (Generative Pre-trained Transformer) and BERT (Bidirectional Encoder Representations from Transformers), which excel at tasks ranging from text understanding to creative content generation.  
-
 ---
 
 ## Causal Transformers
