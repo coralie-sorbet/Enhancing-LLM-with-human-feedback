@@ -82,20 +82,28 @@ The architecture, as visualized in the diagram below from [Vaswani et al., 2017]
 
 The self-attention mechanism is central to both the encoder and decoder. It helps the model focus on relevant parts of the sequence while encoding input data or generating output predictions. This capability underpins the success of large-scale models like GPT (Generative Pre-trained Transformer) and BERT (Bidirectional Encoder Representations from Transformers), which excel at tasks ranging from text understanding to creative content generation.  
 
+---
 
-### Causal Transformers
-Causal Transformers, such as GPT and LLAMA, are optimized for autoregressive tasks, where the model predicts the next token in a sequence based on prior tokens. These models use a left-to-right masking mechanism during training, ensuring each token attends only to its predecessors. This design helps them perform exceptionally well on text-generation tasks.
+## Causal Transformers
+Causal Transformers, such as GPT and LLAMA, are specifically optimized for autoregressive tasks, where the model generates a sequence by predicting the next token based on its preceding tokens. Unlike bidirectional models, which consider both left and right context, Causal Transformers employ a **left-to-right** attention mechanism during training. This ensures that each token can only attend to the tokens that have already been generated (its predecessors), preventing future tokens from influencing the prediction of the current token. This causal design is crucial for tasks like text generation, where the model needs to produce coherent outputs one token at a time.
 
 #### Key Characteristics
 - **Training Objective**:
-  Causal Transformers are trained to minimize the negative log-likelihood of the next token:
+  Causal Transformers are trained with the goal of minimizing the negative log-likelihood of the next token in the sequence. The model learns to predict the probability of a token $x_t$ given the sequence of preceding tokens $x_{<t}$ (i.e., the context up to but not including $x_t$). The training objective is formalized as:
 
 $\mathcal{L} = -\sum_{t=1}^{T} \log P(x_t \mid x_{<t})$
 
 Where $x_t$ represents the token at position $t$ and $x_{<t}$ denotes all prior tokens in the sequence.
 
+This objective ensures the model learns to generate the most likely next token, given the previous tokens, which is essential for autoregressive tasks.
+
+- **Causal Masking**:  
+  During training, a causal (or autoregressive) masking mechanism is applied to the attention weights. This ensures that the attention for a token $x_t$ only focuses on tokens $x_1, x_2, ..., x_{t-1}$, and not on any future tokens. This masking prevents the model from "cheating" by seeing future information and helps it generate tokens one step at a time, making the model suitable for real-time generation tasks like text completion or dialogue generation.
+
 - **Applications**:
   These models are widely used in text generation, dialogue systems, code completion, and other areas requiring next-token prediction.
+
+This causal structure is what makes models like GPT and LLAMA particularly powerful for tasks where each new token is dependent on the preceding tokens and where the output must be generated in a specific order, without relying on future context.
 
 ---
 
