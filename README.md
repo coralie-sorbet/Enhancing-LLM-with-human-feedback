@@ -37,13 +37,13 @@ Despite these challenges, the results obtained demonstrate a clear performance i
 
 ### Reward Model Evaluation
 
-The evaluation of the reward model is based on two key metrics: `eval_loss` and `eval_accuracy`. These metrics provide insights into the model's performance in terms of both prediction quality and classification accuracy.
+The reward model's evaluation is based on two key metrics: `eval_loss` and `eval_accuracy`. These metrics provide insights into the model's performance in terms of prediction quality and classification accuracy.
 
 - **`eval_loss`**: **0.6931**  
   This cross-entropy loss value during evaluation reflects the model's ability to predict outputs. A lower value generally indicates better performance, though the optimal loss depends on the specific dataset and task.
 
 - **`eval_accuracy`**: **0.7473**  
-  The reward model correctly classified **74.73%** of the evaluation samples. While this is a promising baseline, there is scope for further optimization.
+  The reward model correctly classified 74.73% of the evaluation samples. While this is a promising baseline, further optimization is possible.
 
 ### Comparative Scores
 - **Average Reward Model Score**: **-0.5434042** (evaluated on the entire training dataset).  
@@ -95,7 +95,7 @@ pip install trl
 
 ### RewardTrainer Example
 
-This is a basic example of how to use the `RewardTrainer` from the `trl` library to train a model.
+This is a basic example of using the `RewardTrainer` from the `trl` library to train a model.
 
 #### Code Example
 
@@ -105,17 +105,17 @@ from datasets import load_dataset
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
 # Load pre-trained model and tokenizer
-tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen2.5-0.5B-Instruct")
+tokenizer = AutoTokenizer.from_pretrained("drive/MyDrive/M2 D3S/Math of DL/Project/tokenizer")
 model = AutoModelForSequenceClassification.from_pretrained(
     "Qwen/Qwen2.5-0.5B-Instruct", num_labels=1
 )
 model.config.pad_token_id = tokenizer.pad_token_id
 
 # Load dataset
-dataset = load_dataset("trl-lib/ultrafeedback_binarized", split="train")
+dataset = load_dataset("trl-lib/ultrafeedback_binarized")
 
 # Set up training arguments
-training_args = RewardConfig(output_dir="Qwen2.5-0.5B-Reward", per_device_train_batch_size=2)
+training_args = RewardConfig(output_dir="Reward", per_device_train_batch_size=2)
 
 # Initialize and train the RewardTrainer
 trainer = RewardTrainer(
@@ -124,13 +124,14 @@ trainer = RewardTrainer(
     processing_class=tokenizer,
     train_dataset=dataset,
 )
+
 trainer.train()
 ```
 
 ### PPOTrainer Example
 
 Here’s a minimal example of using `PPOTrainer` from Hugging Face’s `trl` library to fine-tune an LLM using Proximal Policy Optimization (PPO).  
-This example assumes you have a dataset and models ready.
+This example assumes there is a dataset and models ready.
 
 #### Code Example
 
