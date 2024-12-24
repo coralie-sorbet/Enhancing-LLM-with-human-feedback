@@ -31,9 +31,9 @@ Causal Transformers, such as GPT and LLAMA, are optimized for autoregressive tas
 - **Training Objective**:
   Causal Transformers are trained to minimize the negative log-likelihood of the next token:
 
-  $$
-  \mathcal{L} = -\sum_{t=1}^{T} \log P(x_t \mid x_{<t})
-  $$
+$$
+\mathcal{L} = -\sum_{t=1}^{T} \log P(x_t \mid x_{<t})
+$$
 
   Where $x_t$ represents the token at position $t$ and $x_{<t}$ denotes all prior tokens in the sequence.
 
@@ -56,9 +56,9 @@ Reinforcement Learning with Human Feedback (RLHF) aligns language models with hu
 
    **Objective Function**:
 
-   $$
-   \max_\theta \mathbb{E}_{x \sim \pi_\theta}[R(x)]
-   $$
+$$
+\max_\theta \mathbb{E}_{x \sim \pi_\theta}[R(x)]
+$$
 
    Where:
    - $\pi_\theta$ is the **policy** (the model),
@@ -83,9 +83,9 @@ Proximal Policy Optimization (PPO) is a reinforcement learning algorithm widely 
 ### Key Features
 - **Clipped Objective Function:**
 
-  $$
-  \mathcal{L}^{\text{CLIP}}(\theta) = \mathbb{E}\left[\min\left(r_t(\theta) A_t, \text{clip}(r_t(\theta), 1 - \epsilon, 1 + \epsilon) A_t\right)\right]
-  $$
+$$
+\mathcal{L}^{\text{CLIP}}(\theta) = \mathbb{E}\left[\min\left(r_t(\theta) A_t, \text{clip}(r_t(\theta), 1 - \epsilon, 1 + \epsilon) A_t\right)\right]
+$$
 
   Where $r_t(\theta)$ is the probability ratio, $\epsilon$ is a hyperparameter controlling the clipping, and $A_t$ is the advantage function.
 
