@@ -69,7 +69,7 @@ Each layer in the encoder and decoder stacks consists of:
 - Feedforward layers.  
 - Residual connections with layer normalization.  
 
-The architecture, as visualized in the diagram below, efficiently handles complex relationships between input and output tokens:  
+The architecture, as visualized in the diagram below from [Vaswani et al., 2017](https://arxiv.org/abs/1706.03762), efficiently handles complex relationships between input and output tokens:  
 
 <div align="center">  
   <img src="https://github.com/user-attachments/assets/2542fd51-5e70-45dd-b792-91ce84eb0f7f" alt="The Transformer- model architecture" width="400">  
