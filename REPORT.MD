@@ -24,10 +24,13 @@ $$
 - **Positional Encoding**:
   Since Transformers process input tokens in parallel, they lack the inherent understanding of token order. To address this, positional encodings are added to the input embeddings, typically in the form of sinusoidal functions, ensuring the model retains the sequence order.
 
+The following diagram, adapted from "Attention is All You Need", illustrates the Transformer model architecture:
+
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/02219518-24c9-4246-859d-9b85404da0f7" alt="RLHF Workflow" width="400">
+  <img src="https://github.com/user-attachments/assets/2542fd51-5e70-45dd-b792-91ce84eb0f7f" alt="The Transformer- model architecture" width="400">
 </div>
 
+The architecture comprises an encoder-decoder design. Encoders process input sequences, while decoders generate outputs by attending to both the encoder's representations and previously generated tokens.
 
 ### Causal Transformers
 Causal Transformers, such as GPT and LLAMA, are optimized for autoregressive tasks, where the model predicts the next token in a sequence based on prior tokens. These models use a left-to-right masking mechanism during training, ensuring each token attends only to its predecessors. This design helps them perform exceptionally well on text-generation tasks.
