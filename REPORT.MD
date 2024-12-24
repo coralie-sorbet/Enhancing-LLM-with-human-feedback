@@ -54,7 +54,7 @@ $\text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)$
 
 This mechanism enables the model to analyze the input from multiple perspectives simultaneously.  
 
-The following diagram from [Vaswani et al., 2017](https://arxiv.org/abs/1706.03762) illustrates scaled dot-product and attention multi-head attention:  
+The following diagram from [Vaswani et al., 2017](https://arxiv.org/abs/1706.03762) illustrates scaled dot-product attention and multi-head attention:  
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/1939da4c-2a3e-4aa2-919a-170302574c07" alt="multi head self attention" width="400">
@@ -186,7 +186,6 @@ $$
   RLHF can be applied to large-scale models like GPT-4 and LLAMA 2. However, scaling RLHF to these models introduces challenges related to efficiency, resource utilization, and maintaining the quality of human alignment. Investigating efficient ways to scale RLHF will be key to improving model performance in diverse domains.
 
 ---
-
 
 ## References
 
