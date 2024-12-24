@@ -79,22 +79,6 @@ The architecture, as visualized in the diagram below from [Vaswani et al., 2017]
 
 The self-attention mechanism is central to both the encoder and decoder. It helps the model focus on relevant parts of the sequence while encoding input data or generating output predictions. This capability underpins the success of large-scale models like GPT (Generative Pre-trained Transformer) and BERT (Bidirectional Encoder Representations from Transformers), which excel at tasks ranging from text understanding to creative content generation.  
 
-### Mathematical Summary  
-
-Below is the complete mathematical formulation of self-attention and multi-head attention:  
-
-$$  
-\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V  
-$$  
-$$  
-\text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, ..., \text{head}_h)W^O  
-$$  
-$$  
-\text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)  
-$$  
-
-By leveraging these components, Transformers achieve state-of-the-art performance across a wide array of applications, demonstrating the power of self-attention and multi-head mechanisms.  
-
 
 ### Causal Transformers
 Causal Transformers, such as GPT and LLAMA, are optimized for autoregressive tasks, where the model predicts the next token in a sequence based on prior tokens. These models use a left-to-right masking mechanism during training, ensuring each token attends only to its predecessors. This design helps them perform exceptionally well on text-generation tasks.
