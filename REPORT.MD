@@ -106,80 +106,107 @@ This objective ensures the model learns to generate the most likely next token, 
 This causal structure is what makes models like GPT and LLAMA particularly powerful for tasks where each new token is dependent on the preceding tokens and where the output must be generated in a specific order, without relying on future context.
 
 ---
-
 ## Reinforcement Learning with Human Feedback (RLHF)
 
 ### Conceptual Framework
-Reinforcement Learning with Human Feedback (RLHF) aligns language models with human preferences by incorporating feedback during training. This feedback helps refine the model’s behavior to produce outputs that are more relevant, coherent, and aligned with user intentions.
+
+Reinforcement Learning with Human Feedback (RLHF) is a process where human preferences are integrated into the training of language models. This allows models to generate outputs that are more coherent, relevant, and aligned with user intentions. By using human feedback, the model can be fine-tuned to reflect specific preferences, improving its performance in tasks like text generation, dialogue, and more.
 
 #### Steps in RLHF
-1. **Training a Reward Model (RM):**
-   Human evaluators rank the model's outputs based on specific criteria such as relevance and coherence. These rankings are used to train a Reward Model (RM), which predicts a scalar reward score for each output.
 
-2. **Optimizing the Language Model with Reinforcement Learning:**
-   The language model is fine-tuned using Reinforcement Learning, particularly Proximal Policy Optimization (PPO). The RM serves as a reward function, guiding the model to maximize expected reward.
+1. **Training a Reward Model (RM)**  
+   In this initial step, human evaluators rank the model’s outputs based on criteria such as relevance, coherence, and usefulness. These rankings are used to train a Reward Model (RM), which is designed to predict a scalar reward score for each output. The reward score helps the model understand how well its outputs align with human preferences.
 
-   **Objective Function**:
+2. **Optimizing the Language Model with Reinforcement Learning**  
+   The language model is fine-tuned using **Reinforcement Learning**, specifically with the **Proximal Policy Optimization (PPO)** algorithm. In this step, the RM serves as the reward function, guiding the model to maximize the expected reward. The RL fine-tuning helps the model improve by directly optimizing its outputs based on human feedback.
 
-<p align="center">
-  <b>max</b><sub>&#x3B8;</sub> <i>E</i><sub>x &#8764; &#x3C0;<sub>&#x3B8;</sub></sub>[R(x)]
-</p>
+   **Objective Function**:  
+   The objective of PPO in RLHF is to maximize the expected reward, as shown in the following equation:
+
+   <p align="center">
+     <b>max</b><sub>&#x3B8;</sub> <i>E</i><sub>x &#8764; &#x3C0;<sub>&#x3B8;</sub></sub>[R(x)]
+   </p>
 
    Where:
    - $\pi_\theta$ is the **policy** (the model),
    - $R(x)$ is the **reward** for a given output $x$,
    - $\theta$ represents the model parameters.
 
+   Additionally, we can use a **learning rate (LR)** to further optimize the results. The learning rate helps control how quickly the model adapts to the feedback and fine-tunes its parameters. Optimizing the learning rate is critical to ensure the model learns efficiently without making overly large or small updates to its weights, which can impact the training stability and performance.
+
 ### Challenges
-- **Computational Cost**: Training models with human feedback requires significant resources and time.
-- **Balancing Fluency and Adherence**: Achieving a balance between fluency and alignment with human preferences is challenging, as improving alignment may reduce fluency or generalization.
+
+- **Computational Cost**:  
+  Training language models with human feedback is computationally expensive and time-consuming. This is because RLHF requires collecting human feedback, training a reward model, and performing several rounds of fine-tuning, each involving intensive computations.
+
+- **Balancing Fluency and Adherence to Human Preferences**:  
+  A major challenge in RLHF is achieving the right balance between fluency (i.e., how natural the model’s outputs sound) and adherence to human preferences. In some cases, improving alignment with human feedback may result in outputs that are less fluent or more constrained.
 
 ### Practical Implementation
-- **Libraries**: Hugging Face's [TRL](https://github.com/huggingface/trl) provides tools for implementing RLHF workflows efficiently.
-- **Example Use Case**: Fine-tuning GPT-2 involves collecting human feedback, training a reward model to rank outputs, and fine-tuning the GPT-2 model using PPO guided by the reward model.
+
+- **Libraries and Tools**:  
+  Hugging Face’s [TRL](https://github.com/huggingface/trl) provides efficient tools for implementing RLHF workflows, helping researchers and developers fine-tune models with human feedback. These tools simplify the process of training a reward model, optimizing using PPO, and integrating the feedback into the language model.
+
+- **Example Use Case**:  
+  In practice, RLHF can be applied to fine-tune models like GPT-2. In this case, human feedback is collected to rank the model’s outputs, a reward model is trained to predict these rankings, and then PPO is used to fine-tune the GPT-2 model. This process aligns the model's behaviour with human preferences, resulting in a more useful and contextually appropriate model for real-world applications.
 
 ---
 
 ## Proximal Policy Optimization (PPO): A Core Algorithm for RLHF
 
 ### Overview
-Proximal Policy Optimization (PPO) is a reinforcement learning algorithm widely used for fine-tuning models with human feedback. PPO ensures stable training by limiting the magnitude of policy updates.
+
+Proximal Policy Optimization (PPO) is a reinforcement learning algorithm widely used for fine-tuning models with human feedback, as it provides a balance between simplicity and effectiveness. PPO stabilizes training by limiting the size of policy updates, making it ideal for tasks where small changes in policy can lead to significant improvements or setbacks.
 
 ### Key Features
-- **Clipped Objective Function:**
 
-$$
-\mathcal{L}^{\text{CLIP}}(\theta) = \mathbb{E}\left[\min\left(r_t(\theta) A_t, \text{clip}(r_t(\theta), 1 - \epsilon, 1 + \epsilon) A_t\right)\right]
-$$
+- **Clipped Objective Function**:  
+  PPO uses a clipped objective function to prevent large, destabilizing updates. The objective function is given by:
 
-  Where $r_t(\theta)$ is the probability ratio, $\epsilon$ is a hyperparameter controlling the clipping, and $A_t$ is the advantage function.
+  $$
+  \mathcal{L}^{\text{CLIP}}(\theta) = \mathbb{E}\left[\min\left(r_t(\theta) A_t, \text{clip}(r_t(\theta), 1 - \epsilon, 1 + \epsilon) A_t\right)\right]
+  $$
 
-- **Entropy Regularization:**
-  PPO includes entropy regularization to encourage policy exploration and prevent overly deterministic behaviors, promoting diversity in responses.
+  Where:
+  - $r_t(\theta)$ is the probability ratio between the new and old policies.
+  - $\epsilon$ is a hyperparameter that controls how much the policy can change between updates.
+  - $A_t$ is the advantage function, indicating how much better or worse an action is compared to the average.
 
-### Resources
-- [CleanRL's PPO Implementation](https://github.com/vwxyzjn/cleanrl/tree/master) offers a minimalistic implementation.
-- Hugging Face’s [Quickstart Guide](https://huggingface.co/blog/rlhf) provides practical insights into PPO with RLHF.
+- **Entropy Regularization**:  
+  PPO includes **entropy regularization**, which encourages exploration by preventing the policy from becoming too deterministic. This promotes diversity in the model’s responses, ensuring that it explores different options and avoids overfitting to particular behaviours.
+
+- **Learning Rate Optimization**:  
+  The learning rate (LR) plays a crucial role in PPO’s performance. By adjusting the learning rate, the model can effectively balance fast learning with stability. A well-tuned learning rate helps optimize the model's performance, ensuring that it converges to the best policy while maintaining stability throughout training.
 
 ---
 
 ## Applications and Future Directions
 
 ### Demonstrated Use Case
-In this project, RLHF is applied to fine-tune a GPT-2 model. The fine-tuned model generates text that aligns closely with human preferences by leveraging a reward model and optimizing with PPO.
+
+In this project, RLHF is used to fine-tune a GPT-2 model. By incorporating human feedback, the model generates text that closely aligns with human preferences, ensuring that outputs are relevant and coherent. PPO, guided by the reward model, helps optimize the language model to better reflect these preferences.
 
 ### Broader Applications
-- **Content Moderation**: Aligning models with ethical guidelines to filter harmful content.
-- **Education**: Developing personalized tutoring systems adaptable to individual student needs.
-- **Healthcare**: Generating patient-friendly explanations of medical information with clarity and accuracy.
+
+- **Content Moderation**: Aligning models with ethical guidelines to ensure the generation of safe and appropriate content.
+- **Education**: Developing personalized tutoring systems that adapt to the needs and preferences of individual students.
+- **Healthcare**: Generating clear, patient-friendly explanations of medical information, ensuring both clarity and accuracy.
 
 ### Future Work
-- **Cost-efficient Alternatives**: Exploring hybrid methods combining supervised fine-tuning with lightweight RL techniques to reduce computational costs.
-- **Scaling to Larger Models**: Investigating RLHF’s application on large-scale models like GPT-4 or LLAMA 2, focusing on scalability and efficiency.
+
+- **Cost-Efficient Alternatives**:  
+  Researchers are exploring hybrid methods that combine supervised fine-tuning with lightweight RL techniques to reduce the computational burden associated with RLHF while maintaining high-quality outputs.
+
+- **Scaling to Larger Models**:  
+  RLHF can be applied to large-scale models like GPT-4 and LLAMA 2. However, scaling RLHF to these models introduces challenges related to efficiency, resource utilization, and maintaining the quality of human alignment. Investigating efficient ways to scale RLHF will be key to improving model performance in diverse domains.
 
 ---
 
+
 ## References
+- [CleanRL's PPO Implementation](https://github.com/vwxyzjn/cleanrl/tree/master) offers a minimalistic implementation.
+- Hugging Face’s [Quickstart Guide](https://huggingface.co/blog/rlhf) provides practical insights into PPO with RLHF.
+
 - [Self-Attention in NLP](https://www.youtube.com/watch?v=5vcj8kSwBCY)
 - [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)
 - [Attention? Attention!](https://lilianweng.github.io/lil-log/2018/06/24/attention-attention.html)
