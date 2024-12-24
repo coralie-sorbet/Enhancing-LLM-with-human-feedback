@@ -10,9 +10,8 @@ Transformers, first introduced in the landmark paper *"Attention is All You Need
 
 #### 1. Input Representation  
 Transformers process sequences of tokens. Each token in the sequence is represented as a dense vector embedding:  
-$$
-X = [x_1, x_2, ..., x_n] 
-$$  
+
+$X = [x_1, x_2, ..., x_n]$  
 
 - **Embeddings**: These vectors encode semantic information about the tokens.  
 - **Positional Encoding**: Since Transformers process tokens in parallel, positional encodings are added to embeddings to capture the order of tokens in the sequence. These are typically sinusoidal functions.  
@@ -23,7 +22,7 @@ The self-attention mechanism allows the model to focus on different parts of the
 
 $Q = XW^Q, \quad K = XW^K, \quad V = XW^V $$
 
-Here, $ Q $, $ K $, and $ V $ are the query, key, and value vectors, respectively, and $ W^Q $, $ W^K $, and $ W^V $ are learnable weight matrices.  
+Here, $Q$, $K$, and $V$ are the query, key, and value vectors, respectively, and $W^Q$, $W^K$, and $W^V$ are learnable weight matrices.  
 
 #### 3. Attention Score Calculation  
 
