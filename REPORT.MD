@@ -59,6 +59,7 @@ The following diagram from [Vaswani et al., 2017](https://arxiv.org/abs/1706.037
 <div align="center">
   <img src="https://github.com/user-attachments/assets/1939da4c-2a3e-4aa2-919a-170302574c07" alt="multi head self attention" width="400">
 </div>
+
 ### Encoder-Decoder Structure  
 
 The Transformer architecture uses an **encoder-decoder** framework:  
