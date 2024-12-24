@@ -46,7 +46,7 @@ $\text{Output} = \text{Softmax}(\text{Attention Score}) \times V$
 
 #### 6. Multi-Head Attention  
 
-To improve the model's ability to capture diverse relationships within the input sequence, Transformers use **multi-head attention**. Multiple sets of $ Q $, $ K $, and $ V $ are computed to create multiple "heads" of attention, each focusing on different aspects of the input. These outputs are concatenated and transformed linearly:  
+To improve the model's ability to capture diverse relationships within the input sequence, Transformers use **multi-head attention**. Multiple sets of $Q$, $K$, and $V$ are computed to create multiple "heads" of attention, each focusing on different aspects of the input. These outputs are concatenated and transformed linearly:  
 
 $\text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, ..., \text{head}_h)W^O$
 
