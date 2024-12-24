@@ -1,14 +1,100 @@
-# Enhancing Large Language Models with Human Feedback via Reinforcement Learning
+# Enhancing Large Language Models with Human Feedback via Reinforcement Learning  
 
-## Understanding and Utilizing Transformers
+## Understanding and Utilizing Transformers  
 
-### Transformer Architectures: A Detailed Explanation
+### Transformer Architectures: A Detailed Explanation  
 
-Transformers, introduced in the seminal paper "Attention is All You Need" by [Vaswani et al., 2017](https://arxiv.org/abs/1706.03762), have revolutionized Natural Language Processing (NLP). The key innovation in Transformer architecture is the self-attention mechanism, which allows the model to dynamically weigh the importance of each input token relative to others. This enables the model to capture both local and global dependencies in text efficiently.
+Transformers, first introduced in the landmark paper *"Attention is All You Need"* by [Vaswani et al., 2017](https://arxiv.org/abs/1706.03762), have become the cornerstone of modern machine learning, especially in NLP. At the heart of their success lies the **self-attention mechanism**, which enables the model to dynamically assess the relevance of each token in the input sequence relative to others. This innovation allows Transformers to capture both local and global dependencies in data, making them incredibly versatile for tasks like text generation, machine translation, and more.  
 
-#### Key Components
+### Key Components  
+
+#### 1. Input Representation  
+Transformers process sequences of tokens. Each token in the sequence is represented as a dense vector embedding:  
+$$ X = [x_1, x_2, ..., x_n] $$  
+
+- **Embeddings**: These vectors encode semantic information about the tokens.  
+- **Positional Encoding**: Since Transformers process tokens in parallel, positional encodings are added to embeddings to capture the order of tokens in the sequence. These are typically sinusoidal functions.  
+
+#### 2. Self-Attention Mechanism  
+
+The self-attention mechanism allows the model to focus on different parts of the input sequence while processing each token. For every token, three vectors are derived using learned weight matrices:  
+
+$$ Q = XW^Q, \quad K = XW^K, \quad V = XW^V $$  
+
+Here, $ Q $, $ K $, and $ V $ are the query, key, and value vectors, respectively, and $ W^Q $, $ W^K $, and $ W^V $ are learnable weight matrices.  
+
+#### 3. Attention Score Calculation  
+
+The relationship between tokens is computed using the scaled dot product of the query and key vectors:  
+$$ \text{Attention Score} = \frac{QK^T}{\sqrt{d_k}} $$  
+
+Here, $ d_k $ represents the dimensionality of the key vectors. Scaling by $ \sqrt{d_k} $ prevents excessively large values that can destabilize training.  
+
+#### 4. Softmax Normalization  
+
+The attention scores are normalized using the softmax function to convert them into probabilities:  
+$$ \text{Softmax}(\text{Attention Score}) = \frac{\exp(\text{Attention Score})}{\sum \exp(\text{Attention Score})} $$  
+
+#### 5. Output Calculation  
+
+The final output for each token is computed as a weighted sum of the value vectors, where the normalized attention scores serve as weights:  
+$$ \text{Output} = \text{Softmax}(\text{Attention Score}) \times V $$  
+
+#### 6. Multi-Head Attention  
+
+To improve the model's ability to capture diverse relationships within the input sequence, Transformers use **multi-head attention**. Multiple sets of $ Q $, $ K $, and $ V $ are computed to create multiple "heads" of attention, each focusing on different aspects of the input. These outputs are concatenated and transformed linearly:  
+
+$$ \text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, ..., \text{head}_h)W^O $$  
+$$ \text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V) $$  
+
+This mechanism enables the model to analyze the input from multiple perspectives simultaneously.  
+
+The following diagram illustrates multi-head attention:  
+![](https://boring-guy.sh/img/masking-rl/multi_head_attention.svg)  
+
+### Encoder-Decoder Structure  
+
+The Transformer architecture uses an **encoder-decoder** framework:  
+
+- **Encoder**: Processes the input sequence and generates intermediate representations.  
+- **Decoder**: Generates the output sequence by attending to both the encoder's representations and previously generated tokens.  
+
+Each layer in the encoder and decoder stacks consists of:  
+- Multi-head attention layers.  
+- Feedforward layers.  
+- Residual connections with layer normalization.  
+
+The architecture, as visualized in the diagram below, efficiently handles complex relationships between input and output tokens:  
+
+<div align="center">  
+  <img src="https://github.com/user-attachments/assets/2542fd51-5e70-45dd-b792-91ce84eb0f7f" alt="The Transformer- model architecture" width="400">  
+</div>  
+
+### Self-Attention in Transformers  
+
+The self-attention mechanism is central to both the encoder and decoder. It helps the model focus on relevant parts of the sequence while encoding input data or generating output predictions. This capability underpins the success of large-scale models like GPT (Generative Pre-trained Transformer) and BERT (Bidirectional Encoder Representations from Transformers), which excel at tasks ranging from text understanding to creative content generation.  
+
+### Mathematical Summary  
+
+Below is the complete mathematical formulation of self-attention and multi-head attention:  
+
+$$  
+\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V  
+$$  
+$$  
+\text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, ..., \text{head}_h)W^O  
+$$  
+$$  
+\text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)  
+$$  
+
+By leveraging these components, Transformers achieve state-of-the-art performance across a wide array of applications, demonstrating the power of self-attention and multi-head mechanisms.  
+
+
 - **Multi-Head Self-Attention**:
-  The self-attention mechanism computes a weighted sum of input tokens, where the attention scores are learned during training. Multi-head attention allows the model to attend to different parts of the input simultaneously, enhancing its ability to capture nuanced relationships across different token dependencies.
+  Self-attention is one of the most important concepts in modern machine learning, especially in natural language processing. It helps a model decide which parts of an input sequence are most relevant as it processes the data, allowing it to understand both small details and broader patterns. Multi-head attention takes this idea further by letting the model focus on multiple aspects of the input at once, which makes it even better at understanding complex relationships between tokens.
+
+  This approach lies at the heart of Transformer models, which have completely changed how we tackle tasks like language processing, computer vision, and speech recognition. Let’s explore how self-attention works and break down the math behind it in simple terms.
 
   **Mathematical representation**:
 
@@ -121,6 +207,10 @@ In this project, RLHF is applied to fine-tune a GPT-2 model. The fine-tuned mode
 ---
 
 ## References
+- [Self-Attention in NLP](https://www.youtube.com/watch?v=5vcj8kSwBCY)
+- [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)
+- [Attention? Attention!](https://lilianweng.github.io/lil-log/2018/06/24/attention-attention.html)
+- [Attention is all you need](https://arxiv.org/pdf/1706.03762.pdf)
 1. Vaswani, A., et al. (2017). Attention Is All You Need. [arXiv:1706.03762](https://arxiv.org/abs/1706.03762)
 2. OpenAI. (2022). Training language models to follow instructions with human feedback. [arXiv:2203.02155](https://arxiv.org/abs/2203.02155)
 3. Hugging Face. (2023). Reinforcement Learning with Human Feedback. [Blog Post](https://huggingface.co/blog/rlhf)
