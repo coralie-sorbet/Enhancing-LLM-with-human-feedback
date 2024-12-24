@@ -54,9 +54,9 @@ Reinforcement Learning with Human Feedback (RLHF) aligns language models with hu
 
    **Objective Function**:
 
-$$
-\max_\theta \mathbb{E}_{x \sim \pi_\theta}[R(x)]
-$$
+<p align="center">
+  <b>max</b><sub>&#x3B8;</sub> <i>E</i><sub>x &#8764; &#x3C0;<sub>&#x3B8;</sub></sub>[R(x)]
+</p>
 
    Where:
    - $\pi_\theta$ is the **policy** (the model),
