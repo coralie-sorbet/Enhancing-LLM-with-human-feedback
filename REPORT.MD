@@ -26,11 +26,11 @@ Here, $Q$, $K$, and $V$ are the query, key, and value vectors, respectively, and
 
 #### 3. Attention Score Calculation  
 
-The relationship between tokens is computed using the scaled dot product of the query and key vectors:  
+The relationship between tokens is computed using the **scaled dot-product attention**. The scaled dot-product of the query and key vectors provides the attention scores:  
 
 $\text{Attention Score} = \frac{QK^T}{\sqrt{d_k}}$
 
-Here, $d_k$ represents the dimensionality of the key vectors. Scaling by $\sqrt{d_k}$ prevents excessively large values that can destabilize training.  
+Here, $d_k$ represents the dimensionality of the key vectors. The scaling factor of $\sqrt{d_k}$ prevents excessively large values that could destabilize training.  
 
 #### 4. Softmax Normalization  
 
@@ -81,6 +81,7 @@ The architecture, as visualized in the diagram below from [Vaswani et al., 2017]
 ### Self-Attention in Transformers  
 
 The self-attention mechanism is central to both the encoder and decoder. It helps the model focus on relevant parts of the sequence while encoding input data or generating output predictions. This capability underpins the success of large-scale models like GPT (Generative Pre-trained Transformer) and BERT (Bidirectional Encoder Representations from Transformers), which excel at tasks ranging from text understanding to creative content generation.  
+
 
 
 ### Causal Transformers
