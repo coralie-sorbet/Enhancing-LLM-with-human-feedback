@@ -46,7 +46,7 @@ The significant improvement in the PPO model’s scores underscores its ability 
 
 ### Visualization and Interpretation of Scores
 
-Below, a barplot and a boxplot illustrate the comparative scores of the Reward Model and PPO Model:
+Below, a boxplot and a histogram illustrate the comparative scores of the Reward Model and PPO Model:
 
 <p align="center">
   <img width="422" alt="image" src="https://github.com/user-attachments/assets/e592cbb4-72a9-453b-bc9f-84454466a7cf" />
