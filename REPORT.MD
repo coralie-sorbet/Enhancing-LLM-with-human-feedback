@@ -4,7 +4,8 @@
 
 ### Transformer Architectures: A Detailed Explanation  
 
-Transformers, first introduced in the landmark paper *"Attention is All You Need"* by [Vaswani et al., 2017](https://arxiv.org/abs/1706.03762), have become the cornerstone of modern machine learning, especially in NLP. At the heart of their success lies the **self-attention mechanism**, which enables the model to dynamically assess the relevance of each token in the input sequence relative to others. This innovation allows Transformers to capture both local and global dependencies in data, making them incredibly versatile for tasks like text generation, machine translation, and more.  
+Transformers, introduced in the paper "Attention is All You Need" by *"Attention is All You Need"* by [Vaswani et al., 2017](https://arxiv.org/abs/1706.03762), are a big breakthrough in modern machine learning, especially for working with language. Their success comes from the self-attention mechanism, which helps the model understand how each word in a sentence relates to every other word. This makes Transformers great at handling both short and long-range connections in data, which is why they work so well for tasks like writing text, translating languages, and more.
+
 
 ### Key Components  
 
