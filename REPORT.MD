@@ -23,7 +23,8 @@ The self-attention mechanism allows the model to focus on different parts of the
 
 $Q = XW^Q, \quad K = XW^K, \quad V = XW^V$
 
-Here, $Q$, $K$, and $V$ are the query, key, and value vectors, respectively, and $W^Q$, $W^K$, and $W^V$ are learnable weight matrices.  
+Here, $Q$, $K$, and $V$ are the query, key, and value vectors, respectively, The query determines what information the current token is looking for, the key represents the information available in other tokens, and the value contains the data that will be passed along based on the attention calculation.
+The weight matrices $W^Q$, $W^K$, and $W^V$ are learnable parameters that transform the input $X$ into the query, key, and value spaces. These matrices are optimized during training to help the model effectively compute attention.
 
 #### 3. Attention Score Calculation  
 
