@@ -95,7 +95,7 @@ Where $x_t$ represents the token at position $t$ and $x_{<t}$ denotes all prior 
 
 This objective ensures the model learns to generate the most likely next token, given the previous tokens, which is essential for autoregressive tasks.
 
-- **Causal Masking**:  
+- **Causal Masking**: 
   During training, a causal (or autoregressive) masking mechanism is applied to the attention weights. This ensures that the attention for a token $x_t$ only focuses on tokens $x_1, x_2, ..., x_{t-1}$, and not on any future tokens. This masking prevents the model from "cheating" by seeing future information and helps it generate tokens one step at a time, making the model suitable for real-time generation tasks like text completion or dialogue generation.
 
 - **Applications**:
