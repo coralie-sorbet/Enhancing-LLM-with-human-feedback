@@ -4,7 +4,7 @@
 
 ### Transformer Architectures: A Detailed Explanation  
 
-Transformers, introduced in the paper "Attention is All You Need" by *"Attention is All You Need"* by [Vaswani et al., 2017](https://arxiv.org/abs/1706.03762), are a big breakthrough in modern machine learning, especially for working with language. Their success comes from the self-attention mechanism, which helps the model understand how each word in a sentence relates to every other word. This makes Transformers great at handling both short and long-range connections in data, which is why they work so well for tasks like writing text, translating languages, and more.
+Transformers, introduced in the paper *"Attention is All You Need"* by [Vaswani et al., 2017](https://arxiv.org/abs/1706.03762), are a big breakthrough in modern machine learning, especially for working with language. Their success comes from the self-attention mechanism, which helps the model understand how each word in a sentence relates to every other word. This makes Transformers great at handling both short and long-range connections in data, which is why they work so well for tasks like writing text, translating languages, and more.
 
 
 ### Key Components  
