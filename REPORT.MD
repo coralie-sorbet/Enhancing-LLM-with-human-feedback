@@ -106,11 +106,11 @@ This causal structure is what makes models like GPT and LLAMA particularly power
 ---
 ## Reinforcement Learning with Human Feedback (RLHF) and Proximal Policy Optimization (PPO)
 
-### Conceptual Framework
+### Framework
 
 Reinforcement Learning with Human Feedback (RLHF) is a method for fine-tuning language models by incorporating human feedback. This process helps ensure the model's outputs are more aligned with human preferences, producing text that is coherent, relevant, and tailored to user intentions. 
 
-RLHF involves training a **Reward Model (RM)**, which is used to evaluate and rank the outputs of the model based on human feedback. This feedback guides the optimization of the language model to maximize reward and improve output quality. The fine-tuning of the model is typically achieved using **Proximal Policy Optimization (PPO)**, a reinforcement learning algorithm that stabilizes the training process.
+RLHF involves training a Reward Model (RM), which evaluates and ranks the model's outputs based on human feedback. This feedback guides the optimization of the language model to maximize reward and improve output quality. The fine-tuning of the model is typically achieved using Proximal Policy Optimization (PPO), a reinforcement learning algorithm that stabilizes the training process.
 
 ### Steps in RLHF
 
@@ -159,14 +159,6 @@ $$
 
 - **Balancing Fluency and Human Preferences**:  
   A key challenge in RLHF is finding the right balance between fluency (how natural and coherent the output is) and alignment with human preferences. While improving human alignment may enhance relevance, it can sometimes lead to a reduction in fluency or generalization.
-
-### Practical Implementation
-
-- **Libraries and Tools**:  
-  Hugging Face’s [TRL](https://github.com/huggingface/trl) library simplifies the process of implementing RLHF. It offers tools to train reward models, apply PPO for fine-tuning, and integrate human feedback into language model training.
-
-- **Example Use Case**:  
-  In practice, RLHF can be used to fine-tune models like GPT-2. Human feedback is collected, a reward model is trained, and PPO is applied to optimize the model’s parameters, aligning it more closely with human preferences. This process results in models that generate more contextually appropriate and user-aligned outputs.
 
 ---
 
